@@ -1,29 +1,66 @@
 import { AppBar, Box, Button, Container, Toolbar } from '@mui/material'
-import { borderRadius } from '@mui/system'
+import { borderRadius, createTheme, ThemeProvider } from '@mui/system'
 import React from 'react'
-import { Link, Outlet } from 'react-router-dom'
+import { Link, NavLink, Outlet } from 'react-router-dom'
+import './styles/style.css'
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#0052cc',
+    },
+    secondary: {
+      main: '#edf2ff',
+    },
+  },
+});
 
 const Layout = ({children}) => {
   return (
-    <div>
-      <div>
-        <AppBar position="static">
+    // <ThemeProvider theme={theme}>
+    <div className="layout-container">
+        <AppBar position="static" color='transparent' sx={{boxShadow: "none"}}>
           <Container>
-            <Toolbar>
+            <Toolbar sx={{justifyContent: "center"}}>
               <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                <Button component={Link} sx={{textTransform: "none"}} color="inherit" to="/panel">
+                <Button
+                  component={NavLink}
+                  sx={{textTransform: "none"}} 
+                  style={isActive => ({color: isActive.isActive ? "#0071ce" : "white"})}
+                  to="/panel"
+                 >
                   Panel
                 </Button>
-                <Button component={Link} sx={{textTransform: "none"}} color="inherit" to="/compra">
+                <Button
+                  component={NavLink}
+                  sx={{textTransform: "none"}} 
+                  style={isActive => ({color: isActive.isActive ? "#0071ce" : "white"})}
+                  to="/compra"
+                >
                   Compra AXN
                 </Button>
-                <Button component={Link} sx={{textTransform: "none"}} color="inherit" to="/cuenta">
+                <Button
+                  component={NavLink}
+                  sx={{textTransform: "none"}} 
+                  style={isActive => ({color: isActive.isActive ? "#0071ce" : "white"})}
+                  to="/cuenta"
+                >
                   Cuenta
                 </Button>
-                <Button component={Link} sx={{textTransform: "none"}} color="inherit" to="/calculadora">
+                <Button
+                  component={NavLink}
+                  sx={{textTransform: "none"}} 
+                  style={isActive => ({color: isActive.isActive ? "#0071ce" : "white"})}
+                  to="/calculadora"
+                >
                   Calculadora
                 </Button>
-                <Button component={Link} sx={{textTransform: "none"}} color="inherit" to="/documentos">
+                <Button
+                  component={NavLink}
+                  sx={{textTransform: "none"}} 
+                  style={isActive => ({color: isActive.isActive ? "#0071ce" : "white"})}
+                  to="/documentos"
+                >
                   Documentos
                 </Button>
               </Box>
@@ -34,11 +71,16 @@ const Layout = ({children}) => {
                 Desconectar
               </Button>
             </Toolbar>
+              <div className='polygon-layout'>Axen</div>
+              <div className='bolita'></div>
           </Container>
         </AppBar>
-      </div>
-        <Outlet />
+        
+        <Container>
+          <Outlet />
+        </Container>
     </div>
+    // </ThemeProvider>
   )
 }
 

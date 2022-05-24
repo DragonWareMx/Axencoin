@@ -1,0 +1,32 @@
+.polygon{
+    background: rgb(210,210,210);
+    background: linear-gradient(90deg, rgba(210,210,210,0.5) 0%, rgba(0,113,192,1) 100%);
+	background-size: 150% 150%;
+    clip-path: polygon(25% 5%, 75% 5%, 76% 60%, 95% 60%, 95% 80%, 75.9% 80%, 74.9% 25%, 25% 25%);
+    margin-top: 100px;
+    display: flex;
+	animation: gradient 5s infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.bolita{
+    background-color: #00030b;
+    border: 2.5px rgba(0,113,192,1) solid;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    left: 94.8%;
+    bottom:12.5px;
+    position: relative;
+}

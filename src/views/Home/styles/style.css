@@ -1,5 +1,66 @@
 .container {
     width: 100vw;
     min-height: 100vh;
-    background-color: aqua;
+    background: url('../assets/Fondo.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.axencoin-image-rotary {
+    width: 100%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.card-irregular-container {
+    position: relative;
+    width: 300px;
+}
+
+.card-irregular {
+    box-sizing: border-box;
+    color: white;
+    font-weight: 700;
+    font-size: 28px;
+
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -10px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.card-irregular:hover {
+    cursor: pointer;
+    mask-image: linear-gradient(-75deg, rgba(0, 0, 0, .6) 30%, #000 50%, rgba(0, 0, 0, .6) 70%);
+    -webkit-mask-image: linear-gradient(-75deg, rgba(0, 0, 0, .6) 30%, #000 50%, rgba(0, 0, 0, .6) 70%);
+    -webkit-mask-size: 200%;
+    mask-size: 200%;
+    animation: shine 1s infinite;
+}
+
+@keyframes shine {
+    from {
+        -webkit-mask-position: 150%;
+    }
+
+    to {
+        -webkit-mask-position: -50%;
+    }
+}
+
+@-webkit-keyframes shine {
+    from {
+        -webkit-mask-position: 150%;
+    }
+
+    to {
+        -webkit-mask-position: -50%;
+    }
 }

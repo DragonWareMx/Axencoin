@@ -2,6 +2,15 @@
   text-align: center;
 }
 
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -32,6 +41,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

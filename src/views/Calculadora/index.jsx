@@ -8,6 +8,7 @@ import TextField from '@mui/material/TextField';
 import { styled } from '@mui/material/styles';
 import FormControl from '@mui/material/FormControl';
 import Slider from '@mui/material/Slider';
+import { Typography } from '@mui/material';
 
 const CssTextField = styled(TextField)(({ theme }) => ({
     'label + &': {
@@ -39,6 +40,8 @@ const CssTextField = styled(TextField)(({ theme }) => ({
     }
 }));
 
+
+
 export const Calculadora = () => {
 
     const [values, setValues] = React.useState({
@@ -51,6 +54,24 @@ export const Calculadora = () => {
     const handleChange = (prop) => (event) => {
         setValues({ ...values, [prop]: event.target.value });
     };
+
+    function ResponsiveTypography({ width }) {
+        // This is equivalent to theme.breakpoints.down("md")
+        const isSmallScreen = /xs|sm|md/.test(width);
+        const typographyProps = {
+          align: isSmallScreen ? "left" : "right"
+        };
+        return (
+          <Typography
+            variant="h6"
+            className='font-style'
+            align='center'
+            {...typographyProps}
+        >
+            Some text
+          </Typography>
+        );
+      }
 
     return (
         <>
@@ -172,6 +193,139 @@ export const Calculadora = () => {
                                         <Slider value={values.days} onChange={(_, newValue) => setValues({ ...values, days: newValue })} onChangeCommitted={(_, newValue) => setValues({ ...values, days: newValue })} min={1} max={365} aria-label="Default" valueLabelDisplay="auto" />
                                     </Grid>
                                     <div className='polygon-slider'>Axen</div>
+                                </Grid>
+                            </Grid>
+
+                            {/* DATOS */}
+                            <Grid
+                                container
+                                direction="row"
+                                justifyContent="space-between"
+                                alignItems="center"
+                                className="bottom-container"
+                            >
+                                <Grid item xs={10} sm={8} style={{position: "relative"}}>
+                                    <Typography
+                                        variant="h6"
+                                        className='font-style'
+                                        align='left'
+                                    >
+                                        Tu inversión inicial
+                                    </Typography>
+                                    <div className='polygon-standard'>
+                                        AXEN
+                                    </div>
+                                </Grid>
+                                <Grid item xs={2} sm={4}>
+                                    <Typography
+                                        variant="h6"
+                                        className='font-style'
+                                        sx={{textAlign: {
+                                            xs: 'right',
+                                            sm: 'center'
+                                        }}}
+                                    >
+                                        $0.000
+                                    </Typography>
+                                </Grid>
+                            </Grid>
+
+                            <Grid
+                                container
+                                direction="row"
+                                justifyContent="space-between"
+                                alignItems="center"
+                                className="bottom-container"
+                            >
+                                <Grid item xs={10} sm={8} style={{position: "relative"}}>
+                                    <Typography
+                                        variant="h6"
+                                        className='font-style'
+                                        align='left'
+                                    >
+                                        Ganancia actual
+                                    </Typography>
+                                    <div className='polygon-standard'>
+                                        AXEN
+                                    </div>
+                                </Grid>
+                                <Grid item xs={2} sm={4}>
+                                    <Typography
+                                        variant="h6"
+                                        className='font-style'
+                                        sx={{textAlign: {
+                                            xs: 'right',
+                                            sm: 'center'
+                                        }}}
+                                    >
+                                        $0.000
+                                    </Typography>
+                                </Grid>
+                            </Grid>
+
+                            <Grid
+                                container
+                                direction="row"
+                                justifyContent="space-between"
+                                alignItems="center"
+                                className="bottom-container"
+                            >
+                                <Grid item xs={10} sm={8} style={{position: "relative"}}>
+                                    <Typography
+                                        variant="h6"
+                                        className='font-style'
+                                        align='left'
+                                    >
+                                        Estimación de ganancias de AXN
+                                    </Typography>
+                                    <div className='polygon-big'>
+                                        AXEN
+                                    </div>
+                                </Grid>
+                                <Grid item xs={2} sm={4}>
+                                    <Typography
+                                        variant="h6"
+                                        className='font-style'
+                                        sx={{textAlign: {
+                                            xs: 'right',
+                                            sm: 'center'
+                                        }}}
+                                    >
+                                        0.000 AXN
+                                    </Typography>
+                                </Grid>
+                            </Grid>
+
+                            <Grid
+                                container
+                                direction="row"
+                                justifyContent="space-between"
+                                alignItems="center"
+                                className="bottom-container"
+                            >
+                                <Grid item xs={10} sm={8} style={{position: "relative"}}>
+                                    <Typography
+                                        variant="h6"
+                                        className='font-style'
+                                        align='left'
+                                    >
+                                        Retorno potencial
+                                    </Typography>
+                                    <div className='polygon-standard'>
+                                        AXEN
+                                    </div>
+                                </Grid>
+                                <Grid item xs={2} sm={4}>
+                                    <Typography
+                                        variant="h6"
+                                        className='font-style'
+                                        sx={{textAlign: {
+                                            xs: 'right',
+                                            sm: 'center'
+                                        }}}
+                                    >
+                                        $0.000
+                                    </Typography>
                                 </Grid>
                             </Grid>
                         </Grid>

@@ -9,11 +9,44 @@ import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 
 const BuyTextField = styled(TextField)({
-
+    '& label.Mui-focused': {
+        borderRadius:'10px',
+        color: 'white',
+    },
+    '& label':{
+        color:'white'
+    },
+    '& .MuiInput-underline:after': {
+    borderRadius:'10px',
+    borderBottomColor: 'rgba(50,113,192,0.5)',
+    color: 'white'
+    },
+    '& .MuiOutlinedInput-root': {
+        borderRadius:'10px',
+        color: 'white',
+        '& fieldset': {
+          borderColor: 'rgba(0,113,192,0.5)',
+          border:'3px solid rgba(0,113,192,0.5)',
+          boxShadow: 'inset 3px 3px 7px 1px rgba(0,0,0,0.83) , 3px 3px 7px 1px rgba(0,0,0,0.83)',
+        },
+        '&:hover fieldset': {
+          borderColor: 'white',
+          border:'3px solid rgba(255,255,255,0.7)',
+        },
+        '&.Mui-focused fieldset': {
+          borderColor: 'rgb(0,113,192)',
+          border:'3px solid rgb(0,113,220)',
+        },
+    },
+    '& .MuiInputBase-input':{
+        borderRadius:'10px',
+        fontSize: '20px'
+    }
 });
 
 const BuyButton = styled(Button)({
-
+  backgroundColor: 'rgb(0,113,192)',
+  borderRadius:'8px'
 });    
 
 export const Compra = () => {
@@ -51,12 +84,11 @@ export const Compra = () => {
                                     label="From:" 
                                     id="from" 
                                     style={{marginTop:'50px'}}
-                                    numeric
                                 />
                                 <BuyTextField 
                                     fullWidth 
-                                    label="From:" 
-                                    id="from" 
+                                    label="To:" 
+                                    id="to" 
                                     style={{marginTop:'50px'}}
                                 />
                             </Grid>

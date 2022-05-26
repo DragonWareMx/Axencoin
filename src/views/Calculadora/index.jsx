@@ -3,11 +3,11 @@ import './css.css';
 import Grid from '@mui/material/Grid';
 import Caja from './assets/Caja-maximo-crop.png'
 import { Container } from '@mui/system';
-import OutlinedInput from '@mui/material/OutlinedInput';
 import InputAdornment from '@mui/material/InputAdornment';
 import TextField from '@mui/material/TextField';
-import { alpha, styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import FormControl from '@mui/material/FormControl';
+import Slider from '@mui/material/Slider';
 
 const CssTextField = styled(TextField)(({ theme }) => ({
     'label + &': {
@@ -45,6 +45,7 @@ export const Calculadora = () => {
         amount: 0.00,
         apy: 63632.325,
         future: 54.91,
+        days: 30
     });
 
     const handleChange = (prop) => (event) => {
@@ -160,6 +161,17 @@ export const Calculadora = () => {
                                             </FormControl>
                                         </div>
                                     </Grid>
+                                </Grid>
+                            </Grid>
+                            <Grid item xs={12} className="bottom-container">
+                                <Grid container className={'input-container'}>
+                                    <Grid item xs={3} md={3} className={'input-text'} style={{ paddingTop: 5 }}>
+                                        {values.days} {values.days === 1 ? 'día' : 'días'}
+                                    </Grid>
+                                    <Grid item xs={9} md={9} >
+                                        <Slider value={values.days} onChange={(_, newValue) => setValues({ ...values, days: newValue })} onChangeCommitted={(_, newValue) => setValues({ ...values, days: newValue })} min={1} max={365} aria-label="Default" valueLabelDisplay="auto" />
+                                    </Grid>
+                                    <div className='polygon-slider'>Axen</div>
                                 </Grid>
                             </Grid>
                         </Grid>

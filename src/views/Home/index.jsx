@@ -16,7 +16,6 @@ export const Home = () => {
                 <img src={Logo} alt="Logo" className='home-logo' />
             </div>
             <Container fixed>
-                <img src={Axencoin} alt="Axencoin" className='axencoin-image-rotary' />
                 <Grid container spacing={2} justifyContent="center" alignItems="center">
                     <Grid item xs={12} md={6} style={{ paddingTop: 0, display: 'flex', justifyContent: 'center' }}>
                         <div className='card-irregular-container'>

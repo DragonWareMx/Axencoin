@@ -3,9 +3,9 @@ import './styles/style.css'
 import { Container, IconButton } from '@mui/material'
 import Facebook from './assets/IconoFace.png'
 import Instagram from './assets/IconoInsta.png'
-import Moneda from './assets/Moneda.png'
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
+import Moneda from './assets/NewMoneda.png'
 
 export const Footer = () => {
     return (

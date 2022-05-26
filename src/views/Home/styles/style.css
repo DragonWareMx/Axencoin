@@ -1,25 +1,21 @@
 .container {
     width: 100vw;
-    min-height: 100vh;
-    background: url('../assets/Fondo.png');
+    height: 100vh;
+    background: url('../assets/axen-coin-fondo.gif');
     background-position: center;
     background-size: cover;
-}
-
-.axencoin-image-rotary {
-    padding-left: 2%;
-    padding-right: 2%;
-    max-height: 500px;
-    max-width: 1000px;
-    width: 100%;
-    height: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    padding-bottom: 5%;
+    box-sizing: border-box;
 }
 
 .home-logo {
     margin-left: 0px;
     margin-right: auto;
+    max-width: 900px;
+    height: auto;
 }
 
 .logo-container {

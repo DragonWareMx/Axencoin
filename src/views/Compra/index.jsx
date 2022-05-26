@@ -27,11 +27,9 @@ const BuyTextField = styled(TextField)({
         '& fieldset': {
           borderColor: 'rgba(0,113,192,0.5)',
           border:'3px solid rgba(0,113,192,0.5)',
-          boxShadow: 'inset 3px 3px 7px 1px rgba(0,0,0,0.83) , 3px 3px 7px 1px rgba(0,0,0,0.83)',
         },
         '&:hover fieldset': {
-          borderColor: 'white',
-          border:'3px solid rgba(255,255,255,0.7)',
+          border:'3px solid rgba(0,113,192,0.5)',
         },
         '&.Mui-focused fieldset': {
           borderColor: 'rgb(0,113,192)',

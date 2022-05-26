@@ -42,10 +42,12 @@ const Layout = () => {
       <AppBar position="static" color='transparent' sx={{ boxShadow: "none" }}>
         <Container>
           <Toolbar sx={{ justifyContent: "center" }}>
-            <Link to='/'>
-              <img src={Logo} alt="Logo" className='logo-header' />
-            </Link>
-            <Box sx={{ display: { xs: 'flex', md: 'none' }, flexGrow: 1, justifyContent: "center" }} className='nav-links-container'>
+            <Box sx={{ display: { xs: 'none', md: 'flex' }, justifyContent: "center" }} className='nav-links-container'>
+              <Link to='/'>
+                <img src={Logo} alt="Logo" className='logo-header' />
+              </Link>
+            </Box>
+            <Box sx={{ display: { xs: 'flex', md: 'none' }, flexGrow: 1, justifyContent: "left" }} className='nav-links-container'>
               <IconButton
                 aria-label="open drawer"
                 edge="end"
@@ -132,7 +134,10 @@ const Layout = () => {
             <IconButton onClick={handleDrawerClose}>
               {theme.direction === 'rtl' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
             </IconButton>
-          </DrawerHeader>
+            <Link to='/'>
+                <img src={Logo} alt="Logo" className='logo-header' />
+              </Link>
+        </DrawerHeader>
         <List>
         <ListItem>
             <ListItemButton

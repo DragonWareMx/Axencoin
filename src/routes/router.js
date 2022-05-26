@@ -22,7 +22,7 @@ export default function Router() {
                     <Route exact path="/compra" element={<Compra />} />
                     <Route exact path="/cuenta" element={<Cuenta />} />
                     <Route exact path="/calculadora" element={<Calculadora />} />
-                    <Route exact path="/documentos" element={<Documentos />} />
+                    {/* <Route exact path="/documentos" element={<Documentos />} /> */}
                 </Route>
             </Routes>
         </BrowserRouter>

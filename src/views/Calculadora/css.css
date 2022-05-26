@@ -101,14 +101,23 @@
 }
 
 .polygon-slider {
-    background: rgb(210, 210, 210);
-    background: linear-gradient(90deg, rgba(210, 210, 210, 0.5) 0%, rgba(0, 113, 192, 1) 100%);
-    background-size: 150% 150%;
-    clip-path: polygon(0% 5%, 75% 5%, 76% 60%, 95% 60%, 95% 80%, 75.9% 80%, 74.9% 25%, 0% 25%);
+    background: rgb(0, 113, 192);
+    clip-path: polygon(0 70%, 20% 70%, 26% 0, 26% 28%, 20.5% 98%, 0 98%);
     display: flex;
     width: 100%;
+    margin-top: -24px;
+    margin-left:-3px;
     animation: gradient 5s infinite;
+    color: transparent;
 }
+
+/* background: rgb(0, 113, 192);
+    clip-path: polygon(0 70%, 15% 70%, 25% 0, 28% 0, 15% 90%, 0 90%);
+    display: flex;
+    width: 100%;
+    margin-top: -22.5px;
+    animation: gradient 5s infinite;
+    color: transparent;*/
 
 @keyframes gradient {
     0% {

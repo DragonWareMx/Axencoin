@@ -19,6 +19,7 @@
     cursor: pointer;
     height: auto;
     display: flex;
+    transition: transform 0.7s ease-in-out;
 }
 
 .buy-options:hover{

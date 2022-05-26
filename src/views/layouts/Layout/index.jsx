@@ -1,22 +1,10 @@
 import { AppBar, Box, Button, Container, Toolbar } from '@mui/material'
-import { borderRadius, createTheme, ThemeProvider } from '@mui/system'
 import React from 'react'
 import { Link, NavLink, Outlet } from 'react-router-dom'
 import './styles/style.css'
 
 import Logo from './assets/Logopequeno.png'
 import { Footer } from '../Footer'
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#0052cc',
-    },
-    secondary: {
-      main: '#edf2ff',
-    },
-  },
-});
 
 const Layout = ({ children }) => {
   return (

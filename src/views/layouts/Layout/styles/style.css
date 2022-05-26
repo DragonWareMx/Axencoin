@@ -30,7 +30,7 @@
 }
 
 .bolita {
-    background-color: #00030b;
+    background-color: transparent;
     border: 2.5px rgba(0, 113, 192, 1) solid;
     border-radius: 50%;
     width: 8px;

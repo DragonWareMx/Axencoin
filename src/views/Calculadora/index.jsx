@@ -198,13 +198,14 @@ export const Calculadora = () => {
 
                             {/* DATOS */}
                             <Grid
+                                item
                                 container
                                 direction="row"
                                 justifyContent="space-between"
                                 alignItems="center"
                                 className="bottom-container"
                             >
-                                <Grid item xs={10} sm={8} style={{position: "relative"}}>
+                                <Grid item container xs={10} sm={8} style={{position: "relative"}}>
                                     <Typography
                                         variant="h6"
                                         className='font-style'
@@ -231,6 +232,7 @@ export const Calculadora = () => {
                             </Grid>
 
                             <Grid
+                                item
                                 container
                                 direction="row"
                                 justifyContent="space-between"
@@ -264,6 +266,7 @@ export const Calculadora = () => {
                             </Grid>
 
                             <Grid
+                                item
                                 container
                                 direction="row"
                                 justifyContent="space-between"
@@ -297,11 +300,13 @@ export const Calculadora = () => {
                             </Grid>
 
                             <Grid
+                                item
                                 container
                                 direction="row"
                                 justifyContent="space-between"
                                 alignItems="center"
                                 className="bottom-container"
+                                sx={{marginBottom: '50px'}}
                             >
                                 <Grid item xs={10} sm={8} style={{position: "relative"}}>
                                     <Typography

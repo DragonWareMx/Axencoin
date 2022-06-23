@@ -19,34 +19,42 @@ export const Cuenta = () => {
                         </div>
                     </div>
                     
-                    <div className='little-info-container'>
+                    {/* <div className='little-info-container'>
                         <div></div>
                         <div>0.000 AXN</div>
                         <div className='custom-divider-gradient'></div>
-                    </div>
-                </Grid>
-
-                <Grid item xs={10} md={4}>
-                    <div className='data-container'>
-                        <div className='data-regular'>
-                            <div>APY</div>
-                            <div className='data-bold'>392,399.622%</div>
-                        </div>
-                        <div className='custom-divider'></div>
-                    </div>
-                    
-                    <div className='little-info-container extra-margin-top'>
-                        <div></div>
-                        <div>Daily ROI 1.785%</div>
-                        <div className='custom-divider-gradient'></div>
-                    </div>
+                    </div> */}
                 </Grid>
 
                 <Grid item xs={10} md={4}>
                     <div className='data-container'>
                         <img src={CardRight} alt="" srcSet="" className='data-img'/>
                         <div className='data-irregular'>
-                            <div>Next Rebase</div>
+                            <div>APY</div>
+                            <div className='data-bold'>365%</div>
+                        </div>
+                    </div>
+
+                    {/* <div className='data-container'>
+                        <div className='data-regular'>
+                            <div>APY</div>
+                            <div className='data-bold'>392,399.622%</div>
+                        </div>
+                        <div className='custom-divider'></div>
+                    </div> */}
+                    
+                    {/* <div className='little-info-container extra-margin-top'>
+                        <div></div>
+                        <div>Daily ROI 1.785%</div>
+                        <div className='custom-divider-gradient'></div>
+                    </div> */}
+                </Grid>
+
+                {/* <Grid item xs={10} md={4}>
+                    <div className='data-container'>
+                        <img src={CardRight} alt="" srcSet="" className='data-img'/>
+                        <div className='data-irregular'>
+                            <div>Num Received</div>
                             <div className='data-bold'>00:01:02</div>
                         </div>
                     </div>
@@ -56,7 +64,7 @@ export const Cuenta = () => {
                         <div>You will earn money soon</div>
                         <div className='custom-divider-gradient'></div>
                     </div>
-                </Grid>
+                </Grid> */}
 
             </Grid>
             <Grid container spacing={{ xs: 2, md: 3 }} justifyContent="center">
@@ -109,7 +117,7 @@ export const Cuenta = () => {
                             className='font-style'
                             align='left'
                         >
-                            Next Reward Amount
+                            Your Rewards
                         </Typography>
                         <div className='polygon-standard-cuenta'>
                             AXEN
@@ -143,7 +151,7 @@ export const Cuenta = () => {
                             className='font-style'
                             align='left'
                         >
-                            Next Reward Amount USD
+                            Last Received
                         </Typography>
                         <div className='polygon-big-cuenta'>
                             AXEN
@@ -177,7 +185,7 @@ export const Cuenta = () => {
                             className='font-style'
                             align='left'
                         >
-                            Next Reward Yield
+                            Num Received
                         </Typography>
                         <div className='polygon-standard-cuenta'>
                             AXEN
@@ -192,7 +200,7 @@ export const Cuenta = () => {
                                 sm: 'center'
                             }}}
                         >
-                            0.018%
+                            0.00 AXN
                         </Typography>
                     </Grid>
                 </Grid>
@@ -204,6 +212,7 @@ export const Cuenta = () => {
                     justifyContent="space-between"
                     alignItems="center"
                     className="bottom-container"
+                    sx={{marginBottom: '50px'}}
                 >
                     <Grid item xs={10} sm={8} style={{position: "relative"}}>
                         <Typography
@@ -211,7 +220,7 @@ export const Cuenta = () => {
                             className='font-style'
                             align='left'
                         >
-                            ROI (1-Day Rate) USD
+                            Your $AXN
                         </Typography>
                         <div className='polygon-standard-cuenta'>
                             AXEN
@@ -226,12 +235,12 @@ export const Cuenta = () => {
                                 sm: 'center'
                             }}}
                         >
-                            $0.000
+                            0.00 AXN
                         </Typography>
                     </Grid>
                 </Grid>
 
-                <Grid
+                {/* <Grid
                     item
                     container
                     direction="row"
@@ -263,9 +272,9 @@ export const Cuenta = () => {
                             9.249%
                         </Typography>
                     </Grid>
-                </Grid>
+                </Grid> */}
 
-                <Grid
+                {/* <Grid
                     item
                     container
                     direction="row"
@@ -298,7 +307,7 @@ export const Cuenta = () => {
                             $0.000
                         </Typography>
                     </Grid>
-                </Grid>
+                </Grid> */}
 
             </Grid>
         </Container>

@@ -11,6 +11,8 @@ import { Documentos } from '../views/Documentos';
 import { Home } from '../views/Home';
 import Layout from '../views/layouts/Layout';
 import { Panel } from '../views/Panel';
+import {Receive} from '../views/Receive';
+import {Swap} from '../views/Swap';
 
 export default function Router() {
     return (
@@ -19,9 +21,15 @@ export default function Router() {
                 <Route exact path="/" element={<Home />} />
                 <Route element={<Layout />}>
                     <Route exact path="/panel" element={<Panel />} />
-                    <Route exact path="/compra" element={<Compra />} />
                     <Route exact path="/cuenta" element={<Cuenta />} />
                     <Route exact path="/calculadora" element={<Calculadora />} />
+
+                    {/* PONER EN EL MENU DROPDOWN */}
+                    <Route exact path="/compra" element={<Compra />} />
+                    <Route exact path="/recibe" element={<Receive />} />
+                    <Route exact path="/swap" element={<Swap />} />
+                    {/* PONER EN EL MENU DROPDOWN */}
+
                     {/* <Route exact path="/documentos" element={<Documentos />} /> */}
                 </Route>
             </Routes>

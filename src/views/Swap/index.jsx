@@ -47,7 +47,7 @@ const BuyButton = styled(Button)({
   borderRadius:'8px'
 });    
 
-export const Compra = () => {
+export const Swap = () => {
     return (
         <Container fixed>
             <Grid container justifyContent="center">
@@ -59,7 +59,7 @@ export const Compra = () => {
                             alignItems="center"
                             direction='row'
                         >
-                            <Grid item style={{fontSize:'22px'}}>BUY</Grid>
+                            <Grid item style={{fontSize:'22px'}}>RECEIVE AXENCOIN</Grid>
                             <Grid item>
                                 <Grid container>
                                     <div onClick={()=>alert('reset')} className='buy-options'>
@@ -79,36 +79,31 @@ export const Compra = () => {
                             <Grid item xs={11}>
                                 <BuyTextField 
                                     fullWidth 
-                                    label="Insert Amount:" 
-                                    id="from" 
-                                    style={{marginTop:'50px'}}
-                                />
-                                <BuyTextField 
-                                    fullWidth 
-                                    label="You Will Get $AXN:" 
-                                    id="to" 
+                                    label="Insert Amount To Receive:" 
+                                    id="receive" 
                                     style={{marginTop:'50px'}}
                                 />
                             </Grid>
                         </Grid>
                         <Grid
                             container
-                            justifyContent="space-between"
+                            justifyContent="center"
                             alignItems="center"
                             direction='row'
                             className='buy-slipText'
                         >
-                            <div>Slippage tolerance</div>
-                            <div>22%</div>
+                            <div>SHARE YOUR QR TO RECEIVE AXN</div>
                         </Grid>
-                        <Grid container justifyContent={'space-around'}>
-                            <BuyButton variant='contained' className='buy-button' style={{backgroundColor:'#020a30'}}>
-                                ADD $AXN TO WALLET
-                            </BuyButton>
+                        {/* <Grid container justifyContent={'center'}> */}
+                            <Grid container justifyContent={'center'}>
+                                <div style={{backgroundColor:'white', width:150, height:150, marginTop:25}}>
+                                    CHANGE THIS DIV WITH QR
+                                </div>
+                            </Grid>
                             <BuyButton variant='contained' className='buy-button'>
-                                BUY AXENCOIN
+                                DOWNLOAD
                             </BuyButton>
-                        </Grid>
+                        {/* </Grid> */}
                     </div>
                 </Grid>
             </Grid>

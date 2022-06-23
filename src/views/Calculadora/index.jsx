@@ -89,8 +89,8 @@ export const Calculadora = () => {
                             </Grid>
                             <Grid item xs={12}>
                                 <div className='little-info-container '>
-                                    <div className="info-title">APY Actual</div>
-                                    <div className="info-quantity">63,632.325%</div>
+                                    <div className="info-title">APY</div>
+                                    <div className="info-quantity">365%</div>
                                     <div className='info-divider-gradient'></div>
                                 </div>
                             </Grid>
@@ -158,7 +158,7 @@ export const Calculadora = () => {
                                     </Grid>
                                 </Grid>
                             </Grid>
-                            <Grid item xs={12} className="bottom-container">
+                            {/* <Grid item xs={12} className="bottom-container">
                                 <Grid container className={'input-container'}>
                                     <Grid item xs={12} md={8} className={'input-text'}>
                                         Futuro precio de AXN en el mercado
@@ -183,7 +183,7 @@ export const Calculadora = () => {
                                         </div>
                                     </Grid>
                                 </Grid>
-                            </Grid>
+                            </Grid> */}
                             <Grid item xs={12} className="bottom-container">
                                 <Grid container className={'input-container'}>
                                     <Grid item xs={3} md={3} className={'input-text'} style={{ paddingTop: 5 }}>

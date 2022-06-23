@@ -21,47 +21,89 @@ export const Panel = () => {
                             </div>
                         </div>
                         
-                        <div className='little-info-container'>
+                        {/* <div className='little-info-container'>
                             <div>Backed Liquidity</div>
                             <div>100%</div>
                             <div className='custom-divider-gradient'></div>
-                        </div>
+                        </div> */}
                     </Grid>
 
                     <Grid item xs={10} md={4}>
-                        <div className='data-container'>
+                        <div className='data-container auxiliar-margin-bottom'>
                             <div className='data-regular'>
-                                <div>Market Cap</div>
-                                <div className='data-bold'>$392,399,852.622</div>
+                                <div>Contract Balance</div>
+                                <div className='data-bold'>0 USDT</div>
                             </div>
                             <div className='custom-divider'></div>
                         </div>
                         
-                        <div className='little-info-container extra-margin-top'>
+                        {/* <div className='little-info-container extra-margin-top'>
                             <div>Next Rebase</div>
                             <div>00:04:16</div>
                             <div className='custom-divider-gradient'></div>
-                        </div>
+                        </div> */}
                     </Grid>
 
                     <Grid item xs={10} md={4}>
                         <div className='data-container'>
                             <img src={CardRight} alt="" srcSet="" className='data-img'/>
                             <div className='data-irregular'>
-                                <div>Circulating Supply</div>
-                                <div className='data-bold'>4,058,724.718</div>
+                                <div>Total Supply</div>
+                                <div className='data-bold'>0 AXN</div>
                             </div>
                         </div>
                         
-                        <div className='little-info-container'>
+                        {/* <div className='little-info-container'>
                             <div>Total Supply</div>
                             <div>4,058,958.910</div>
+                            <div className='custom-divider-gradient'></div>
+                        </div> */}
+                    </Grid>
+
+                </Grid>
+
+                <Grid container justifyContent={'center'}>
+                    <Grid xs={10} md={4}>
+                        <div className='data-container'>
+                            <div className='data-regular'>
+                                <div className='next-row-text'>Total Rewards Distr.</div>
+                                <div className='data-bold' style={{fontSize:'18px'}}>0 AXN</div>
+                            </div>
+                            <div className='custom-divider'></div>
+                        </div>
+                    </Grid>
+                </Grid>
+
+                <Grid container alignItems='center' className='auxiliar-margin-top auxiliar-margin-bottom'>
+
+                    <Grid item xs={12} md={4}>
+                        <div className='little-info-container'>
+                            <div>Daily Auto Compound</div>
+                            <div>0.355%</div>
+                            <div className='custom-divider-gradient'></div>
+                        </div>
+                    </Grid>
+
+                    <Grid item xs={12} md={4}>
+                        <div className='little-info-container'>
+                            <div>APY</div>
+                            <div>365%</div>
+                            <div className='custom-divider-gradient'></div>
+                        </div>
+                    </Grid>
+
+                    <Grid item xs={12} md={4}>
+                        <div className='little-info-container'>
+                            <div>Dev Mktg Fee</div>
+                            <div>5%</div>
                             <div className='custom-divider-gradient'></div>
                         </div>
                     </Grid>
 
                 </Grid>
-                <Grid container spacing={{ xs: 2, md: 3 }} justifyContent="center">
+
+
+                {/* <Grid container spacing={{ xs: 2, md: 3 }} justifyContent="center">
 
                     <Grid item xs={10} md={4}>
                         <div className='data-container'>
@@ -73,24 +115,18 @@ export const Panel = () => {
                         </div>
                         
                         <div className='little-info-container remove-margin-top'>
-                            <div># Value of FirePit</div>
-                            <div>234.230 AXN</div>
+                            <div>Daily Auto Compound</div>
+                            <div>0.355%</div>
                             <div className='custom-divider-gradient'></div>
                         </div>
                     </Grid>
 
                     <Grid item xs={10} md={4}>
-                        <div className='data-container'>
-                            <div className='data-regular'>
-                                <div className='next-row-text'>Pool Value</div>
-                                <div className='data-bold' style={{fontSize:'18px'}}>$37,330.317</div>
-                            </div>
-                            <div className='custom-divider'></div>
-                        </div>
+                    
                         
                         <div className='little-info-container extra-margin-top'>
-                            <div># Value of FirePit</div>
-                            <div>$23,043.993</div>
+                            <div>APY</div>
+                            <div>365%</div>
                             <div className='custom-divider-gradient'></div>
                         </div>
                     </Grid>
@@ -105,13 +141,13 @@ export const Panel = () => {
                         </div>
                         
                         <div className='little-info-container'>
-                            <div>%FirePit:Supply</div>
-                            <div>0.000%</div>
+                            <div>Dev Mktg Fee</div>
+                            <div>5%</div>
                             <div className='custom-divider-gradient'></div>
                         </div>
                     </Grid>
 
-                </Grid>
+                </Grid> */}
             </Container>
         </>
     )

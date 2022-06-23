@@ -7,8 +7,8 @@
 }
 
 .polygon-layout {
-    background: rgb(255,255,255);
-background: linear-gradient(90deg, rgba(255,255,255,0) 21%, rgba(0,113,192,0.5) 51%, rgba(0,113,192,1) 68%);
+    background: rgb(255, 255, 255);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 21%, rgba(0, 113, 192, 0.5) 51%, rgba(0, 113, 192, 1) 68%);
 
     background-size: 150% 150%;
     clip-path: polygon(0% 5%, 75% 5%, 76% 60%, 95% 60%, 95% 80%, 75.9% 80%, 74.9% 25%, 0% 25%);
@@ -52,4 +52,19 @@ background: linear-gradient(90deg, rgba(255,255,255,0) 21%, rgba(0,113,192,0.5) 
     font-family: 'Montserrat';
     font-weight: 500;
     font-size: 18px;
+}
+
+.button-dropdown {
+    font-family: 'Montserrat' !important;
+    font-weight: 500 !important;
+    font-size: 18px !important;
+    line-height: 32px !important;
+}
+
+.menu-item {
+    font-family: 'Montserrat' !important;
+    font-weight: 500 !important;
+    font-size: 16px !important;
+    text-decoration: none !important;
+    color: white !important;
 }

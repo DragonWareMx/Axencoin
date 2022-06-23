@@ -103,7 +103,7 @@ const Layout = () => {
 								<MenuItem onClick={handleClose}><Link to={'/recibe'} className="menu-item">Recibe</Link></MenuItem>
 								<MenuItem onClick={handleClose}><Link to={'/swap'} className="menu-item">Swap</Link></MenuItem>
 								<MenuItem onClick={handleClose}><Link to={'/envia'} className="menu-item">Envia</Link></MenuItem>
-								<MenuItem onClick={handleClose}><Link to={'/swap'} className="menu-item">Swap</Link></MenuItem>
+								<MenuItem onClick={handleClose}><Link to={'/retira'} className="menu-item">Retira</Link></MenuItem>
 							</Menu>
 							<Button
 								component={NavLink}

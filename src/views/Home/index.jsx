@@ -20,9 +20,11 @@ export const Home = () => {
                     <Grid item xs={12} md={6} style={{ paddingTop: 0, display: 'flex', justifyContent: 'center' }}>
                         <div className='card-irregular-container'>
                             <img src={CardLeft} alt="" width={300} />
-                            <div className='card-irregular'>
-                                COMPRAR AHORA
-                            </div>
+                            <Link to="/compra">
+                                <div className='card-irregular'>
+                                    COMPRAR AHORA
+                                </div>
+                            </Link>
                         </div>
                     </Grid>
                     <Grid item xs={12} md={6} style={{ paddingTop: 0, display: 'flex', justifyContent: 'center' }}>
@@ -36,7 +38,7 @@ export const Home = () => {
                         </div>
                     </Grid>
                 </Grid>
-                <Grid style={{marginTop:20}}>
+                <Grid style={{ marginTop: 20 }}>
                     <Link to='/swap' className='update-now'>¿Ya actualizaste tu AXENCOIN? Da clic aquí</Link>
                 </Grid>
             </Container>

@@ -122,11 +122,8 @@ const Layout = () => {
 								Calculadora
 							</Button>
 							<Button
-								component={NavLink}
+								className="button-dropdown"
 								sx={{ textTransform: "none" }}
-								style={isActive => ({ color: isActive.isActive ? "#0071ce" : "white" })}
-								to="https://docs.axencoin.finance/"
-								target={"_blank"}
 								onClick={() => window.open('https://docs.axencoin.finance/', '_blank', 'noopener,noreferrer')}
 							>
 								Documentos
@@ -216,11 +213,7 @@ const Layout = () => {
 
 					<ListItem>
 						<ListItemButton
-							component={NavLink}
-							sx={{ textTransform: "none" }}
-							style={isActive => ({ color: isActive.isActive ? "#0071ce" : "inherit" })}
-							to="https://docs.axencoin.finance/"
-							target={"_blank"}
+							className="button-navigation"
 							onClick={() => window.open('https://docs.axencoin.finance/', '_blank', 'noopener,noreferrer')}
 						>
 							<ListItemText primary="Documentos" />

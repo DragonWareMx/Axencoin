@@ -36,6 +36,9 @@ export const Home = () => {
                         </div>
                     </Grid>
                 </Grid>
+                <Grid style={{marginTop:20}}>
+                    <Link to='/swap' className='update-now'>¿Ya actualizaste tu AXENCOIN? Da clic aquí</Link>
+                </Grid>
             </Container>
         </div>
     )

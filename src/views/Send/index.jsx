@@ -47,7 +47,7 @@ const BuyButton = styled(Button)({
   borderRadius:'8px'
 });    
 
-export const Swap = () => {
+export const Send = () => {
     return (
         <Container fixed>
             <Grid container justifyContent="center">
@@ -59,7 +59,7 @@ export const Swap = () => {
                             alignItems="center"
                             direction='row'
                         >
-                            <Grid item style={{fontSize:'22px'}}>SWAP YOUR OLD to $AXN</Grid>
+                            <Grid item style={{fontSize:'22px'}}>SEND $AXN</Grid>
                             <Grid item>
                                 <Grid container>
                                     <div onClick={()=>alert('reset')} className='buy-options'>
@@ -71,7 +71,7 @@ export const Swap = () => {
                                 </Grid>
                             </Grid>
                         </Grid>
-                        <Grid item style={{textAlign:'left',fontSize:'12px',fontWeight:300}}>FAST, SECURE, KYC-FREE</Grid>
+                        <Grid item style={{textAlign:'left',fontSize:'12px',fontWeight:300}}>SHARE AXEN PROJECT</Grid>
                         <Grid 
                             container
                             justifyContent="center" 
@@ -79,14 +79,29 @@ export const Swap = () => {
                             <Grid item xs={11}>
                                 <BuyTextField 
                                     fullWidth 
-                                    label="Quantity of Tokens:" 
+                                    label="Insert Amount:" 
                                     id="from" 
+                                    style={{marginTop:'50px'}}
+                                />
+                                <BuyTextField 
+                                    fullWidth 
+                                    label="Insert Receiver:" 
+                                    id="to" 
                                     style={{marginTop:'50px'}}
                                 />
                             </Grid>
                         </Grid>
+                        <Grid
+                            container
+                            justifyContent="space-between"
+                            alignItems="center"
+                            direction='row'
+                            className='buy-slipText'
+                        >
+                            <div>Sending 1 $AXN is like sending 1$USD</div>
+                        </Grid>
                         <BuyButton variant='contained' className='buy-button' style={{backgroundColor:'#020a30'}}>
-                            APPROVE TOKENS
+                            SEND $AXN
                         </BuyButton>
                     </div>
                 </Grid>

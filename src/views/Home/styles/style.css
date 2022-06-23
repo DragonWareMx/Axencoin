@@ -23,6 +23,18 @@
     display: flex;
 }
 
+.update-now{
+    color: white;
+    text-decoration: none;
+    transition: ease-in-out 0.3s;
+    font-size: 18px;
+}
+
+.update-now:hover{
+    color: #A2A0AA;
+    transition: ease 0.3s;
+}
+
 @media (max-width: 990px) {
     .home-logo {
         width: 800px;

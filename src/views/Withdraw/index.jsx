@@ -47,7 +47,7 @@ const BuyButton = styled(Button)({
   borderRadius:'8px'
 });    
 
-export const Swap = () => {
+export const Withdraw = () => {
     return (
         <Container fixed>
             <Grid container justifyContent="center">
@@ -59,7 +59,7 @@ export const Swap = () => {
                             alignItems="center"
                             direction='row'
                         >
-                            <Grid item style={{fontSize:'22px'}}>SWAP YOUR OLD to $AXN</Grid>
+                            <Grid item style={{fontSize:'22px'}}>WITHDRAW YOUR $AXN</Grid>
                             <Grid item>
                                 <Grid container>
                                     <div onClick={()=>alert('reset')} className='buy-options'>
@@ -79,15 +79,20 @@ export const Swap = () => {
                             <Grid item xs={11}>
                                 <BuyTextField 
                                     fullWidth 
-                                    label="Quantity of Tokens:" 
+                                    label="Insert amount to withdraw:" 
                                     id="from" 
                                     style={{marginTop:'50px'}}
                                 />
                             </Grid>
                         </Grid>
-                        <BuyButton variant='contained' className='buy-button' style={{backgroundColor:'#020a30'}}>
-                            APPROVE TOKENS
-                        </BuyButton>
+                        <Grid container justifyContent={'space-around'}>
+                            <BuyButton variant='contained' className='buy-button' style={{backgroundColor:'#020a30'}}>
+                                WITHDRAW ALL AXENCOIN
+                            </BuyButton>
+                            <BuyButton variant='contained' className='buy-button'>
+                                WITHDRAW AXENCOIN
+                            </BuyButton>
+                        </Grid>
                     </div>
                 </Grid>
             </Grid>

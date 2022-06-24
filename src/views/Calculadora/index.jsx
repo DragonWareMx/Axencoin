@@ -231,7 +231,7 @@ export const Calculadora = () => {
                                 </Grid>
                             </Grid>
 
-                            <Grid
+                            {/* <Grid
                                 item
                                 container
                                 direction="row"
@@ -263,7 +263,7 @@ export const Calculadora = () => {
                                         $0.000
                                     </Typography>
                                 </Grid>
-                            </Grid>
+                            </Grid> */}
 
                             <Grid
                                 item

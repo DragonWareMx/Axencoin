@@ -1,4 +1,4 @@
-import { Grid } from '@mui/material'
+import { Grid, Tooltip } from '@mui/material'
 import { Container } from '@mui/system'
 import React from 'react'
 import './styles/style.css'
@@ -102,12 +102,16 @@ export const Compra = () => {
                             <div>22%</div>
                         </Grid>
                         <Grid container justifyContent={'space-around'}>
-                            <BuyButton variant='contained' className='buy-button' style={{backgroundColor:'#020a30'}}>
-                                ADD $AXN TO WALLET
-                            </BuyButton>
-                            <BuyButton variant='contained' className='buy-button'>
-                                BUY AXENCOIN
-                            </BuyButton>
+                            <Tooltip title='Si aún no tienes el token AXN en tu wallet, agrégalo aquí.'>
+                                <BuyButton variant='contained' className='buy-button' style={{backgroundColor:'#020a30'}}>
+                                    ADD $AXN TO WALLET
+                                </BuyButton>
+                            </Tooltip>
+                            <Tooltip title='No olvides agregar el token AXN a tu wallet antes de comprar.'>
+                                <BuyButton variant='contained' className='buy-button'>
+                                    BUY AXENCOIN
+                                </BuyButton>
+                            </Tooltip>
                         </Grid>
                     </div>
                 </Grid>

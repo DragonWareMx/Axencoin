@@ -8,6 +8,7 @@ import CardLeft from './assets/BotonComprarAhora.png'
 import CardRight from './assets/BotonLeermas.png'
 import Axencoin from './assets/MONEDA-AXEN-CRYPTO-CROP.gif'
 import Logo from './assets/LogoPantalla1.png'
+import { Tooltip } from '@mui/material';
 
 export const Home = () => {
     return (
@@ -39,7 +40,9 @@ export const Home = () => {
                     </Grid>
                 </Grid>
                 <Grid style={{ marginTop: 20 }}>
-                    <Link to='/swap' className='update-now'>¿Ya actualizaste tu AXENCOIN? Da clic aquí</Link>
+                    <Tooltip title='Si compaste AxenCoin antes, puedes actualizar tu token aquí para seguir obteniendo beneficios.'>
+                        <Link to='/swap' className='update-now'>¿Ya actualizaste tu AXENCOIN? Da clic aquí</Link>
+                    </Tooltip>
                 </Grid>
             </Container>
         </div>

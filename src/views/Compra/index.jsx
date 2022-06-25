@@ -89,6 +89,12 @@ export const Compra = () => {
                                     className='hidden'
                                     id="tokenToBuy"
                                     style={{marginTop:'50px'}}
+                                    InputProps={{
+                                        readOnly: true,
+                                      }}
+                                    InputLabelProps={{
+                                        shrink: true,
+                                    }}
                                 />
                                 <div ></div>
                             </Grid>
@@ -105,7 +111,7 @@ export const Compra = () => {
                         </Grid>
                         <Grid container justifyContent={'space-around'}>
                             <Tooltip title='Si aún no tienes el token AXN en tu wallet, agrégalo aquí.'>
-                                <BuyButton variant='contained' className='buy-button' style={{backgroundColor:'#020a30'}}>
+                                <BuyButton variant='contained' className='buy-button addToWallet' style={{backgroundColor:'#020a30'}}>
                                     ADD $AXN TO WALLET
                                 </BuyButton>
                             </Tooltip>

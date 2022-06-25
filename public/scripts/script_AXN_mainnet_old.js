@@ -25,7 +25,7 @@ if (window.ethereum) {
 		try {     
 		web3 = new Web3(new Web3.providers.HttpProvider('https://bsc-dataseed1.binance.org'));//https://bsc-dataseed1.binance.org
 		console.log("web3 provider");
-		//checkMetamask();
+	//	checkMetamask();
 	} catch (error) {console.log('Error web3Provider'+error);} 
 
 }
@@ -150,7 +150,7 @@ async function startApp(){
 				  web3.eth.defaultAccount = account;
 				  console.log('Account: ' +  web3.eth.defaultAccount+'-bool:'+accountOK); 
 				  jQuery('.referralLink').html(''+account+'');
-				  jQuery('#BNB_CONNECT').html(account.substr(0, 9)+'...'+account.substr(36, 40));
+				  jQuery('#BNB_CONNECT').html(address.substr(0, 9)+'...'+address.substr(36, 40));
 
 				  (async() => {generate();})();
 			 }
@@ -296,6 +296,7 @@ contractCoin.methods.getAccountRewardsInfo(account).call(function(err, result){ 
 	let boh = web3.utils.fromWei( result[4], 'ether');
 	//jQuery('h2:contains("TOTAL REWARDS RECEIVED")').html('TOTAL REWARDS RECEIVED: '+boh+' BNB');
 	jQuery('#tokenReward').html((Number(boh)).toLocaleString(undefined, { minimumFractionDigits: 5 })+' AXN');
+	console.log(result[4]);
 	 if(Number(result[5]>0)){
 	jQuery('#earningArea ').removeClass('hidden');
 	 let nDate=new Date(result[5]*1000).toGMTString(); jQuery('#lastReceived').html(nDate); 
@@ -455,6 +456,8 @@ let transfer = contractCoin.methods.transfer(receiver,amount).send({from: accoun
       	});
 }
 	
+jQuery(document).on('click', '#approveToken', function(e) {approveToken()});
+jQuery(document).on('click', '#swapToken', function(e) {swapToken()});
 jQuery(document).on('click', '.addToWallet', function(e) {
 e.preventDefault();
 addToWallet(e);
@@ -470,7 +473,7 @@ addToWallet(e);
 		address: coinAddress,// e.token.address,
 		symbol: tokenSymbol,
 		decimals: 18,
-		image: "https://axencoin.finance/iconoAxenCoin.png"//
+		image: "https://safebuy.technology/AXEN/images/favicon.ico"//
 				}
 			}
 		});/* metodo aggiornato ma non funzionante su mobile
@@ -497,7 +500,7 @@ addToWallet(e);
     }      
 jQuery(document).on('click', '#buyToken', function(e) {	// alert('Mining not yet Open'); return;
 	e.preventDefault();
-	
+		
 	let amount = ((jQuery('#form-field-bnbToBuy').val()*decimals)).toLocaleString('fullwide', {useGrouping:false});
 	AMOUNT = (parseInt(AMOUNT)*decimals).toLocaleString('fullwide', {useGrouping:false}); 
 	console.log('tokens:'+AMOUNT);
@@ -540,7 +543,7 @@ function calcToken(){
 				AMOUNT = tokenAmount;
 				jQuery('.tokenCalc').removeClass('hidden');
 				jQuery('.tokenCalc').fadeOut().fadeIn();//.toFixed(8));//;
-				jQuery('#tokenToBuy').val((Number(web3.utils.fromWei(result, 'ether'))*0.95).toLocaleString(undefined, { minimumFractionDigits: 0 })+' AXN');//totBalToken;
+				jQuery('#tokenToBuy').val('You will get'+(Number(web3.utils.fromWei(result, 'ether'))*0.95).toLocaleString(undefined, { minimumFractionDigits: 0 })+' AXN');//totBalToken;
 	 				}
 				
 				});
@@ -597,7 +600,7 @@ async function temporizador(){
 async function swapToken(){
 	let T = ((jQuery('#tokenToSwap').val()*decimalsOld)).toLocaleString('fullwide', {useGrouping:false});
 	console.log(T);
-	let transfer = contractCoin.methods.swapToken(T).send({from: account})
+	let transfer = contractCoin.methods.swapToken().send({from: account})
 		.once('sending', function(payload){ console.log('Sending : '+payload);jQuery('.spinner').removeClass('hidden');})
 		.once('sent', function(payload){ console.log('Sent : '+payload); jQuery('#stakeTokenBtn ').attr('disabled',true).fadeOut(); })
 		.once('transactionHash', function(hash){ 
@@ -684,7 +687,7 @@ jQuery(document).on('click', '#BNB_CONNECT', function(e) {
 				window.top.jQuery('#DIV-MODAL').html('');
 				//alert();
 				jQuery('#IFRAME-MODAL').removeClass('hidden');
-	        	window.top.jQuery('#IFRAME-MODAL').attr('src',linkZ);
+	        	//window.top.jQuery('#IFRAME-MODAL').attr('src',linkZ);
 	        	window.top.jQuery('#IFRAME-MODAL').css({height: window.top.innerHeight});
 	        	window.top.jQuery('#IFRAME-MODAL').removeClass('hidden');
 	        	//jQuery('#wallet-modal').modal('toggle');
@@ -731,16 +734,16 @@ async function generate(){
 	jQuery('#qrcode').empty();
 	jQuery('#downloader').removeClass('hidden');
 	jQuery('.qr-url').removeClass('hidden');
-	//jQuery('.qr-url').val('https://metamask.app.link/send/'+coinAddress+'@'+97+'/transfer?address='+ web3.utils.toChecksumAddress(await account)+'&uint256='+Q+'e18');
-	jQuery('.qr-url').val('https://metamask.app.link/dapp/https://axencoin.finance/envia?address='+ web3.utils.toChecksumAddress(await account)+'');
+//jQuery('.qr-url').val('https://metamask.app.link/send/'+coinAddress+'@'+97+'/transfer?address='+ web3.utils.toChecksumAddress(await account)+'&uint256='+Q+'e18');
+jQuery('.qr-url').val('https://metamask.app.link/dapp/https://axencoin.finance/envia?address='+ web3.utils.toChecksumAddress(await account)+'');
 
-	// Generate and Output QR Code
-	jQuery('#qrcode').qrcode({width: jQuery('.qr-size').val(),height: jQuery('.qr-size').val(),text: jQuery('.qr-url').val()});
-	jQuery("canvas").css('border', '10px solid #fff'); jQuery("canvas").addClass('rio');jQuery("canvas").attr("id","canvas")
-	//dataURL = jQuery("canvas").toDataURL("image/png").replace(/^data:image\/[^;]/, 'data:application/octet-stream');
-	}else{
-		jQuery('#qrArea').append('<h3>Connect wallet to create your QR</h3>');
-	}
+// Generate and Output QR Code
+jQuery('#qrcode').qrcode({width: jQuery('.qr-size').val(),height: jQuery('.qr-size').val(),text: jQuery('.qr-url').val()});
+jQuery("canvas").css('border', '10px solid #fff'); jQuery("canvas").addClass('rio');jQuery("canvas").attr("id","canvas")
+//dataURL = jQuery("canvas").toDataURL("image/png").replace(/^data:image\/[^;]/, 'data:application/octet-stream');
+}else{
+	jQuery('#qrArea').append('<h3>Connect wallet to create your QR</h3>');
+}
 }
 
 
@@ -777,12 +780,11 @@ if( isMobile.iOS() ) {
 jQuery('#main').css('margin-top',80);
 }
 
-jQuery(document).on('keyup', '#form-field-bnbToBuy', function(e) { calcToken();});
-jQuery(document).on('click', '#approveToken', function(e) {approveToken()});
-jQuery(document).on('click', '#swapToken', function(e) {swapToken()});
-jQuery(document).on('click', '#btn-download', function(e) {download()});
-
-let searchParams = new URLSearchParams(window.location.search)
-let ref = searchParams.get('address');
-jQuery('#receiver').val(ref);
-
+ jQuery(document).on('keyup', '#form-field-bnbToBuy', function(e) { calcToken();});  
+ 
+ let searchParams = new URLSearchParams(window.location.search)
+		let ref = searchParams.get('address');
+		jQuery('#receiver').val(ref);
+ 
+		
+ 

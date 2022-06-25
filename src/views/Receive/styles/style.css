@@ -61,3 +61,7 @@
             mask-composite: exclude;
     z-index: 9;
 } */
+
+.hidden{
+    display: none;
+}

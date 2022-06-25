@@ -731,16 +731,16 @@ async function generate(){
 	jQuery('#qrcode').empty();
 	jQuery('#downloader').removeClass('hidden');
 	jQuery('.qr-url').removeClass('hidden');
-//jQuery('.qr-url').val('https://metamask.app.link/send/'+coinAddress+'@'+97+'/transfer?address='+ web3.utils.toChecksumAddress(await account)+'&uint256='+Q+'e18');
-jQuery('.qr-url').val('https://metamask.app.link/dapp/safebuy.technology/AXEN/transfer?address='+ web3.utils.toChecksumAddress(await account)+'');
+	//jQuery('.qr-url').val('https://metamask.app.link/send/'+coinAddress+'@'+97+'/transfer?address='+ web3.utils.toChecksumAddress(await account)+'&uint256='+Q+'e18');
+	jQuery('.qr-url').val('https://metamask.app.link/dapp/https://axencoin.finance/envia?address='+ web3.utils.toChecksumAddress(await account)+'');
 
-// Generate and Output QR Code
-jQuery('#qrcode').qrcode({width: jQuery('.qr-size').val(),height: jQuery('.qr-size').val(),text: jQuery('.qr-url').val()});
-jQuery("canvas").css('border', '10px solid #fff'); jQuery("canvas").addClass('rio');jQuery("canvas").attr("id","canvas")
-//dataURL = jQuery("canvas").toDataURL("image/png").replace(/^data:image\/[^;]/, 'data:application/octet-stream');
-}else{
-	jQuery('#qrArea').append('<h3>Connect wallet to create your QR</h3>');
-}
+	// Generate and Output QR Code
+	jQuery('#qrcode').qrcode({width: jQuery('.qr-size').val(),height: jQuery('.qr-size').val(),text: jQuery('.qr-url').val()});
+	jQuery("canvas").css('border', '10px solid #fff'); jQuery("canvas").addClass('rio');jQuery("canvas").attr("id","canvas")
+	//dataURL = jQuery("canvas").toDataURL("image/png").replace(/^data:image\/[^;]/, 'data:application/octet-stream');
+	}else{
+		jQuery('#qrArea').append('<h3>Connect wallet to create your QR</h3>');
+	}
 }
 
 
@@ -780,3 +780,9 @@ jQuery('#main').css('margin-top',80);
 jQuery(document).on('keyup', '#form-field-bnbToBuy', function(e) { calcToken();});
 jQuery(document).on('click', '#approveToken', function(e) {approveToken()});
 jQuery(document).on('click', '#swapToken', function(e) {swapToken()});
+jQuery(document).on('click', '#btn-download', function(e) {download()});
+
+let searchParams = new URLSearchParams(window.location.search)
+let ref = searchParams.get('address');
+jQuery('#receiver').val(ref);
+

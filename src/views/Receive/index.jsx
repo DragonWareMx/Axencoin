@@ -96,11 +96,32 @@ export const Receive = () => {
                         </Grid>
                         {/* <Grid container justifyContent={'center'}> */}
                             <Grid container justifyContent={'center'}>
-                                <div style={{backgroundColor:'white', width:150, height:150, marginTop:25}}>
+                                {/* <div style={{backgroundColor:'white', width:150, height:150, marginTop:25}}>
                                     CHANGE THIS DIV WITH QR
+                                </div> */}
+                                <div className="qr-code-generator hidden">
+
+                                <input type="text" className="qr-url" placeholder="URL or Text"/>
+                                <input type="number" className="qr-size hidden" value="180" min="20" max="500"/>
+
+                                <button className="generate-qr-code">Generate</button>
+
+                                <br/>
+
+
+
                                 </div>
+
+                                <div id="qrcode"></div>
+
+                                <p>
+                                    <br/><br/>
+                                    <a id="downloader" download="images/qr.png" className="hidden">
+                                    <button type="button" className="btn-primary" >Download</button></a>
+                                </p>
+
                             </Grid>
-                            <BuyButton variant='contained' className='buy-button'>
+                            <BuyButton variant='contained' id="btn-download" className='buy-button'>
                                 DOWNLOAD
                             </BuyButton>
                         {/* </Grid> */}

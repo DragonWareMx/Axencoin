@@ -80,13 +80,13 @@ export const Send = () => {
                                 <BuyTextField 
                                     fullWidth 
                                     label="Insert Amount:" 
-                                    id="from" 
+                                    id="form-field-tokenToSend" 
                                     style={{marginTop:'50px'}}
                                 />
                                 <BuyTextField 
                                     fullWidth 
                                     label="Insert Receiver:" 
-                                    id="to" 
+                                    id="receiver" 
                                     style={{marginTop:'50px'}}
                                 />
                             </Grid>
@@ -100,7 +100,7 @@ export const Send = () => {
                         >
                             <div>Sending 1 $AXN is like sending 1$USD</div>
                         </Grid>
-                        <BuyButton variant='contained' className='buy-button' style={{backgroundColor:'#020a30'}}>
+                        <BuyButton variant='contained' className='buy-button' id="sendToken" style={{backgroundColor:'#020a30'}}>
                             SEND $AXN
                         </BuyButton>
                     </div>

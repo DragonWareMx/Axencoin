@@ -136,7 +136,7 @@ const Layout = () => {
 							className='text-truncate'
 							style={{ borderRadius: 25 }}
 						>
-							Desconectar
+							{/* Desconectar */}
 						</Button>
 					</Toolbar>
 					<div className='polygon-layout'>Axen</div>

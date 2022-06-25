@@ -150,7 +150,7 @@ async function startApp(){
 				  web3.eth.defaultAccount = account;
 				  console.log('Account: ' +  web3.eth.defaultAccount+'-bool:'+accountOK); 
 				  jQuery('.referralLink').html(''+account+'');
-				  jQuery('#BNB_CONNECT').html(''+account+'');
+				  jQuery('#BNB_CONNECT').html(address.substr(0, 9)+'...'+address.substr(36, 40));
 
 				  (async() => {generate();})();
 			 }

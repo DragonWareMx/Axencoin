@@ -32,7 +32,7 @@ export const Panel = () => {
                         <div className='data-container auxiliar-margin-bottom'>
                             <div className='data-regular'>
                                 <div>Contract Balance</div>
-                                <div className='data-bold'>0 USDT</div>
+                                <div className='data-bold contractbalance'>0 USDT</div>
                             </div>
                             <div className='custom-divider'></div>
                         </div>

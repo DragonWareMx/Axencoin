@@ -688,7 +688,7 @@ jQuery(document).on('click', '#BNB_CONNECT', function(e) {
 	        	window.top.jQuery('#IFRAME-MODAL').css({height: window.top.innerHeight});
 	        	window.top.jQuery('#IFRAME-MODAL').removeClass('hidden');
 	        	//jQuery('#wallet-modal').modal('toggle');
-				jQuery('#wallet-modal').modal('show');
+				//jQuery('#wallet-modal').modal('show');
 	        	/*jQuery.magnificPopup.open({
 					  items: {
 					    src: '#myModal'

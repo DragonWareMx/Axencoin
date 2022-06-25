@@ -79,14 +79,15 @@ export const Compra = () => {
                             <Grid item xs={11}>
                                 <BuyTextField 
                                     fullWidth 
-                                    label="Insert Amount:" 
-                                    id="from" 
+                                    label="Insert BNB Amount:" 
+                                    id="form-field-bnbToBuy" 
                                     style={{marginTop:'50px'}}
                                 />
                                 <BuyTextField 
                                     fullWidth 
                                     label="You Will Get $AXN:" 
-                                    id="to" 
+                                    className='hidden'
+                                    id="tokenToBuy" 
                                     style={{marginTop:'50px'}}
                                 />
                             </Grid>
@@ -108,7 +109,7 @@ export const Compra = () => {
                                 </BuyButton>
                             </Tooltip>
                             <Tooltip title='No olvides agregar el token AXN a tu wallet antes de comprar.'>
-                                <BuyButton variant='contained' className='buy-button'>
+                                <BuyButton variant='contained' className='buy-button' id="buyToken">
                                     BUY AXENCOIN
                                 </BuyButton>
                             </Tooltip>

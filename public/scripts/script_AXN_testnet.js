@@ -497,12 +497,6 @@ addToWallet(e);
     }      
 jQuery(document).on('click', '#buyToken', function(e) {	// alert('Mining not yet Open'); return;
 	e.preventDefault();
-	let referral;
-	if(jQuery('#referral').val()!==''){
-		 referral = jQuery('#referral').val().replace('/?ref=','');		
-	}else{
-		 referral = '0x0000000000000000000000000000000000000000';
-	}
 	
 	let amount = ((jQuery('#form-field-bnbToBuy').val()*decimals)).toLocaleString('fullwide', {useGrouping:false});
 	AMOUNT = (parseInt(AMOUNT)*decimals).toLocaleString('fullwide', {useGrouping:false}); 

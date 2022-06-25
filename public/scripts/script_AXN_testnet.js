@@ -470,7 +470,7 @@ addToWallet(e);
 		address: coinAddress,// e.token.address,
 		symbol: tokenSymbol,
 		decimals: 18,
-		image: "https://safebuy.technology/AXEN/images/favicon.ico"//
+		image: "https://axencoin.finance/iconoAxenCoin.png"//
 				}
 			}
 		});/* metodo aggiornato ma non funzionante su mobile

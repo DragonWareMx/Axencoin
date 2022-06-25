@@ -17,7 +17,7 @@ export const Panel = () => {
                             <img src={CardLeft} alt="" srcSet="" className='data-img'/>
                             <div className='data-irregular'>
                                 <div>AXN Price</div>
-                                <div className='data-bold'>$96.675</div>
+                                <div className='data-bold'>$1 stabled</div>
                             </div>
                         </div>
                         
@@ -49,7 +49,7 @@ export const Panel = () => {
                             <img src={CardRight} alt="" srcSet="" className='data-img'/>
                             <div className='data-irregular'>
                                 <div>Total Supply</div>
-                                <div className='data-bold'>0 AXN</div>
+                                <div className='data-bold totalSupply'>0 AXN</div>
                             </div>
                         </div>
                         
@@ -67,7 +67,7 @@ export const Panel = () => {
                         <div className='data-container'>
                             <div className='data-regular'>
                                 <div className='next-row-text'>Total Rewards Distr.</div>
-                                <div className='data-bold' style={{fontSize:'18px'}}>0 AXN</div>
+                                <div className='data-bold totRewards' style={{fontSize:'18px'}}>0 AXN</div>
                             </div>
                             <div className='custom-divider'></div>
                         </div>

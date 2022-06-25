@@ -15,7 +15,7 @@ export const Cuenta = () => {
                         <img src={CardLeft} alt="" srcSet="" className='data-img'/>
                         <div className='data-irregular'>
                             <div>Your Balance</div>
-                            <div className='data-bold'>$0.000</div>
+                            <div className='data-bold' id="totalAXN">$0.000</div>
                         </div>
                     </div>
                     
@@ -98,7 +98,7 @@ export const Cuenta = () => {
                                 sm: 'center'
                             }}}
                         >
-                            $0.000
+                            $1
                         </Typography>
                     </Grid>
                 </Grid>
@@ -131,6 +131,7 @@ export const Cuenta = () => {
                                 xs: 'right',
                                 sm: 'center'
                             }}}
+                            id="tokenReward"
                         >
                             0.000 AXN
                         </Typography>
@@ -165,6 +166,7 @@ export const Cuenta = () => {
                                 xs: 'right',
                                 sm: 'center'
                             }}}
+                            id="lastReceived"
                         >
                             0.000 AXN
                         </Typography>
@@ -199,13 +201,14 @@ export const Cuenta = () => {
                                 xs: 'right',
                                 sm: 'center'
                             }}}
+                            id="lastReceivedNum"
                         >
                             0.00 AXN
                         </Typography>
                     </Grid>
                 </Grid>
                 
-                <Grid
+                {/* <Grid
                     item
                     container
                     direction="row"
@@ -238,7 +241,7 @@ export const Cuenta = () => {
                             0.00 AXN
                         </Typography>
                     </Grid>
-                </Grid>
+                </Grid> */}
 
                 {/* <Grid
                     item

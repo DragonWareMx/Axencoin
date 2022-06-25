@@ -133,6 +133,7 @@ const Layout = () => {
 							variant="contained"
 							size='large'
 							id='BNB_CONNECT'
+							className='text-truncate'
 							style={{ borderRadius: 25 }}
 						>
 							Desconectar

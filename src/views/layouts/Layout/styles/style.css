@@ -69,3 +69,11 @@
     text-decoration: none !important;
     color: white !important;
 }
+
+.text-truncate {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 90px;
+    display: inline-block;
+}

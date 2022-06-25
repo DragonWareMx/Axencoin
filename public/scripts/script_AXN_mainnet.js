@@ -25,7 +25,7 @@ if (window.ethereum) {
 		try {     
 		web3 = new Web3(new Web3.providers.HttpProvider('https://bsc-dataseed1.binance.org'));//https://bsc-dataseed1.binance.org
 		console.log("web3 provider");
-		//checkMetamask();
+	//	checkMetamask();
 	} catch (error) {console.log('Error web3Provider'+error);} 
 
 }
@@ -36,15 +36,15 @@ async function checkMetamask(){
 			if (MetaMaskOnboarding.isMetaMaskInstalled()==true)
 					{
 						jQuery('.selAccount ').addClass('hidden');
-						jQuery('.menu-item').find('a[href = "#BNB_CONNECT"]').html('Metamask Installed!');
+						jQuery('.menu-item').find('#BNB_CONNECT').html('Metamask Installed!');
 						checkNet();
 						//getAccounts();
 					} else {
 				      chainIdX=false;	//alert(netId);
-				      jQuery('.menu-item').find('a[href = "#BNB_CONNECT"]').html('Install Metamask');
+				      jQuery('.menu-item').find('#BNB_CONNECT').html('Install Metamask');
 				      jQuery('.selAccount ').removeClass('hidden');//alert('1')
 				      //jQuery('.purchaseArtSpace ').addClass('hidden');
-				     // jQuery('a[href = "#BNB_CONNECT"]').attr('href','#BNB_FORCE');
+				     // jQuery('#BNB_CONNECT').attr('href','#BNB_FORCE');
 					}
 		}			
 					startApp();	
@@ -59,12 +59,12 @@ async function checkNet(){
 				if(netId === '0x38'){//'0x61'97--- 0x38 56
 					chainIdX=true;//alert(chainIdX+'oo');
 					console.log('This page is BNB  network:'+netId);
-					jQuery('a[href = "#BNB_CONNECT"]').html('Connected to BSC ');
+					jQuery('#BNB_CONNECT').html('Connected to BSC ');
 					
 			      } else {
 				      chainIdX=false;	//alert(netId);
 				      //alert('This is wrong network: Please Connect to Binance Smart Chain');
-				      jQuery('a[href = "#BNB_CONNECT"]').html('Connect to BSC ');
+				      jQuery('#BNB_CONNECT').html('Connect to BSC ');
 				      jQuery('.selAccount ').removeClass('hidden');//alert('2')
 				      
 				      web3 = new Web3(new Web3.providers.HttpProvider('https://bsc-dataseed1.binance.org'));//https://bsc-dataseed1.binance.org
@@ -78,16 +78,16 @@ async function checkNet(){
 }
 async function updateHeader(){
 	if( isMobile.Android() &&(await chainIdX==false) ) {
-jQuery('a[href = "#BNB_CONNECT"]').html('<div align=center>Connect</div>');
+jQuery('#BNB_CONNECT').html('<div align=center>Connect</div>');
 }
 if( isMobile.iOS()) { jQuery(document).ready(function() {jQuery('#main').css('margin-top',80);});
 if(await chainIdX==false){
 //https://metamask.github.io/metamask-deeplinks/#
 //alert('Due to Apple restrictions Wallet is not enabled on iOS devices');
-jQuery('a[href = "#BNB_CONNECT"]').html('<div align=center>Connect to BSC</div>');
+jQuery('#BNB_CONNECT').html('<div align=center>Connect to BSC</div>');
 } }//alert(await chainIdX+'xxx')!isMobile.any() &&
 if( (await chainIdX==false) ) {
-jQuery('a[href = "#BNB_CONNECT"]').append('<div align=center>Connect to BSC</div>');
+jQuery('#BNB_CONNECT').append('<div align=center>Connect to BSC</div>');
 }
 }
 	  	async function bnbPrice(){
@@ -150,7 +150,7 @@ async function startApp(){
 				  web3.eth.defaultAccount = account;
 				  console.log('Account: ' +  web3.eth.defaultAccount+'-bool:'+accountOK); 
 				  jQuery('.referralLink').html(''+account+'');
-				  jQuery('#BNB_CONNECT').html(''+account+'');
+				  jQuery('#BNB_CONNECT').html(address.substr(0, 9)+'...'+address.substr(36, 40));
 
 				  (async() => {generate();})();
 			 }
@@ -296,6 +296,7 @@ contractCoin.methods.getAccountRewardsInfo(account).call(function(err, result){ 
 	let boh = web3.utils.fromWei( result[4], 'ether');
 	//jQuery('h2:contains("TOTAL REWARDS RECEIVED")').html('TOTAL REWARDS RECEIVED: '+boh+' BNB');
 	jQuery('#tokenReward').html((Number(boh)).toLocaleString(undefined, { minimumFractionDigits: 5 })+' AXN');
+	console.log(result[4]);
 	 if(Number(result[5]>0)){
 	jQuery('#earningArea ').removeClass('hidden');
 	 let nDate=new Date(result[5]*1000).toGMTString(); jQuery('#lastReceived').html(nDate); 
@@ -455,7 +456,9 @@ let transfer = contractCoin.methods.transfer(receiver,amount).send({from: accoun
       	});
 }
 	
-jQuery('.addToWallet').click(function(e) {
+jQuery(document).on('click', '#approveToken', function(e) {approveToken()});
+jQuery(document).on('click', '#swapToken', function(e) {swapToken()});
+jQuery(document).on('click', '.addToWallet', function(e) {
 e.preventDefault();
 addToWallet(e);
 
@@ -497,13 +500,7 @@ addToWallet(e);
     }      
 jQuery(document).on('click', '#buyToken', function(e) {	// alert('Mining not yet Open'); return;
 	e.preventDefault();
-	let referral;
-	if(jQuery('#referral').val()!==''){
-		 referral = jQuery('#referral').val().replace('/?ref=','');		
-	}else{
-		 referral = '0x0000000000000000000000000000000000000000';
-	}
-	
+		
 	let amount = ((jQuery('#form-field-bnbToBuy').val()*decimals)).toLocaleString('fullwide', {useGrouping:false});
 	AMOUNT = (parseInt(AMOUNT)*decimals).toLocaleString('fullwide', {useGrouping:false}); 
 	console.log('tokens:'+AMOUNT);
@@ -546,7 +543,7 @@ function calcToken(){
 				AMOUNT = tokenAmount;
 				jQuery('.tokenCalc').removeClass('hidden');
 				jQuery('.tokenCalc').fadeOut().fadeIn();//.toFixed(8));//;
-				jQuery('#tokenToBuy').html((Number(web3.utils.fromWei(result, 'ether'))*0.95).toLocaleString(undefined, { minimumFractionDigits: 0 })+' AXN');//totBalToken;
+				jQuery('#tokenToBuy').val('You will get'+(Number(web3.utils.fromWei(result, 'ether'))*0.95).toLocaleString(undefined, { minimumFractionDigits: 0 })+' AXN');//totBalToken;
 	 				}
 				
 				});
@@ -673,7 +670,7 @@ try {
         }
     }
     
-jQuery(document).on('click', 'a[href = "#BNB_CONNECT"]', function(e) {
+jQuery(document).on('click', '#BNB_CONNECT', function(e) {
 					if( isMobile.Android()  ) {
 					window.location.href='https://link.trustwallet.com/open_url?coin_id=60&url='+window.location.href+'&c=56&to=c60';
 					return;
@@ -690,11 +687,11 @@ jQuery(document).on('click', 'a[href = "#BNB_CONNECT"]', function(e) {
 				window.top.jQuery('#DIV-MODAL').html('');
 				//alert();
 				jQuery('#IFRAME-MODAL').removeClass('hidden');
-	        	window.top.jQuery('#IFRAME-MODAL').attr('src',linkZ);
+	        	//window.top.jQuery('#IFRAME-MODAL').attr('src',linkZ);
 	        	window.top.jQuery('#IFRAME-MODAL').css({height: window.top.innerHeight});
 	        	window.top.jQuery('#IFRAME-MODAL').removeClass('hidden');
 	        	//jQuery('#wallet-modal').modal('toggle');
-				jQuery('#wallet-modal').modal('show');
+				//jQuery('#wallet-modal').modal('show');
 	        	/*jQuery.magnificPopup.open({
 					  items: {
 					    src: '#myModal'
@@ -738,7 +735,7 @@ async function generate(){
 	jQuery('#downloader').removeClass('hidden');
 	jQuery('.qr-url').removeClass('hidden');
 //jQuery('.qr-url').val('https://metamask.app.link/send/'+coinAddress+'@'+97+'/transfer?address='+ web3.utils.toChecksumAddress(await account)+'&uint256='+Q+'e18');
-jQuery('.qr-url').val('https://metamask.app.link/dapp/safebuy.technology/AXEN/transfer?address='+ web3.utils.toChecksumAddress(await account)+'');
+jQuery('.qr-url').val('https://metamask.app.link/dapp/https://axencoin.finance/envia?address='+ web3.utils.toChecksumAddress(await account)+'');
 
 // Generate and Output QR Code
 jQuery('#qrcode').qrcode({width: jQuery('.qr-size').val(),height: jQuery('.qr-size').val(),text: jQuery('.qr-url').val()});
@@ -776,9 +773,18 @@ function checkMobile(){
 
 }
 if( isMobile.any() &&(chainId==false) ) {
-jQuery('a[href = "#BNB_CONNECT"]').html('<div align=center><a href=https://link.trustwallet.com/open_url?coin_id=60&url='+window.location.href+'&c=56&to=c60><img src=https://theartclub.io/web/images/trustwallet-binance.png width=125 style=padding-top:10px sizes="(max-width: 409px) 100vw, 409px"></a></div>');
+jQuery('#BNB_CONNECT').html('<div align=center><a href=https://link.trustwallet.com/open_url?coin_id=60&url='+window.location.href+'&c=56&to=c60><img src=https://theartclub.io/web/images/trustwallet-binance.png width=125 style=padding-top:10px sizes="(max-width: 409px) 100vw, 409px"></a></div>');
 }
 if( isMobile.iOS() ) { 
 //alert('Due to Apple restrictions Wallet is not enabled on iOS devices');
 jQuery('#main').css('margin-top',80);
 }
+
+ jQuery(document).on('keyup', '#form-field-bnbToBuy', function(e) { calcToken();});  
+ 
+ let searchParams = new URLSearchParams(window.location.search)
+		let ref = searchParams.get('address');
+		jQuery('#receiver').val(ref);
+ 
+		
+ 

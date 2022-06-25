@@ -132,6 +132,7 @@ const Layout = () => {
 						<Button
 							variant="contained"
 							size='large'
+							id='BNB_CONNECT'
 							style={{ borderRadius: 25 }}
 						>
 							Desconectar

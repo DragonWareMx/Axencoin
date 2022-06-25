@@ -36,15 +36,15 @@ async function checkMetamask(){
 			if (MetaMaskOnboarding.isMetaMaskInstalled()==true)
 					{
 						jQuery('.selAccount ').addClass('hidden');
-						jQuery('.menu-item').find('a[href = "#BNB_CONNECT"]').html('Metamask Installed!');
+						jQuery('.menu-item').find('#BNB_CONNECT').html('Metamask Installed!');
 						checkNet();
 						//getAccounts();
 					} else {
 				      chainIdX=false;	//alert(netId);
-				      jQuery('.menu-item').find('a[href = "#BNB_CONNECT"]').html('Install Metamask');
+				      jQuery('.menu-item').find('#BNB_CONNECT').html('Install Metamask');
 				      jQuery('.selAccount ').removeClass('hidden');//alert('1')
 				      //jQuery('.purchaseArtSpace ').addClass('hidden');
-				     // jQuery('a[href = "#BNB_CONNECT"]').attr('href','#BNB_FORCE');
+				     // jQuery('#BNB_CONNECT').attr('href','#BNB_FORCE');
 					}
 		}			
 					startApp();	
@@ -59,12 +59,12 @@ async function checkNet(){
 				if(netId === '0x61'){//'0x61'97--- 0x38 56
 					chainIdX=true;//alert(chainIdX+'oo');
 					console.log('This page is BNB  network:'+netId);
-					jQuery('a[href = "#BNB_CONNECT"]').html('Connected to BSC ');
+					jQuery('#BNB_CONNECT').html('Connected to BSC ');
 					
 			      } else {
 				      chainIdX=false;	//alert(netId);
 				      //alert('This is wrong network: Please Connect to Binance Smart Chain');
-				      jQuery('a[href = "#BNB_CONNECT"]').html('Connect to BSC ');
+				      jQuery('#BNB_CONNECT').html('Connect to BSC ');
 				      jQuery('.selAccount ').removeClass('hidden');//alert('2')
 				      
 				      web3 = new Web3(new Web3.providers.HttpProvider('https://data-seed-prebsc-2-s1.binance.org:8545'));//https://bsc-dataseed1.binance.org
@@ -78,16 +78,16 @@ async function checkNet(){
 }
 async function updateHeader(){
 	if( isMobile.Android() &&(await chainIdX==false) ) {
-jQuery('a[href = "#BNB_CONNECT"]').html('<div align=center>Connect</div>');
+jQuery('#BNB_CONNECT').html('<div align=center>Connect</div>');
 }
 if( isMobile.iOS()) { jQuery(document).ready(function() {jQuery('#main').css('margin-top',80);});
 if(await chainIdX==false){
 //https://metamask.github.io/metamask-deeplinks/#
 //alert('Due to Apple restrictions Wallet is not enabled on iOS devices');
-jQuery('a[href = "#BNB_CONNECT"]').html('<div align=center>Connect to BSC</div>');
+jQuery('#BNB_CONNECT').html('<div align=center>Connect to BSC</div>');
 } }//alert(await chainIdX+'xxx')!isMobile.any() &&
 if( (await chainIdX==false) ) {
-jQuery('a[href = "#BNB_CONNECT"]').append('<div align=center>Connect to BSC</div>');
+jQuery('#BNB_CONNECT').append('<div align=center>Connect to BSC</div>');
 }
 }
 	  	async function bnbPrice(){
@@ -667,7 +667,7 @@ try {
         }
     }
     
-jQuery(document).on('click', 'a[href = "#BNB_CONNECT"]', function(e) {
+jQuery(document).on('click', '#BNB_CONNECT', function(e) {
 					if( isMobile.Android()  ) {
 					window.location.href='https://link.trustwallet.com/open_url?coin_id=60&url='+window.location.href+'&c=56&to=c60';
 					return;
@@ -770,7 +770,7 @@ function checkMobile(){
 
 }
 if( isMobile.any() &&(chainId==false) ) {
-jQuery('a[href = "#BNB_CONNECT"]').html('<div align=center><a href=https://link.trustwallet.com/open_url?coin_id=60&url='+window.location.href+'&c=56&to=c60><img src=https://theartclub.io/web/images/trustwallet-binance.png width=125 style=padding-top:10px sizes="(max-width: 409px) 100vw, 409px"></a></div>');
+jQuery('#BNB_CONNECT').html('<div align=center><a href=https://link.trustwallet.com/open_url?coin_id=60&url='+window.location.href+'&c=56&to=c60><img src=https://theartclub.io/web/images/trustwallet-binance.png width=125 style=padding-top:10px sizes="(max-width: 409px) 100vw, 409px"></a></div>');
 }
 if( isMobile.iOS() ) { 
 //alert('Due to Apple restrictions Wallet is not enabled on iOS devices');

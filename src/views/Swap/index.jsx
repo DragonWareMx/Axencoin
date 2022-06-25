@@ -80,12 +80,23 @@ export const Swap = () => {
                                 <BuyTextField 
                                     fullWidth 
                                     label="Quantity of Tokens:" 
-                                    id="from" 
+                                    id="tokenToSwap" 
                                     style={{marginTop:'50px'}}
+                                    InputProps={{
+                                        readOnly: true,
+                                      }}
+                                    InputLabelProps={{
+                                        shrink: true,
+                                    }}
                                 />
                             </Grid>
                         </Grid>
-                        <BuyButton variant='contained' className='buy-button' style={{backgroundColor:'#020a30'}}>
+
+                        <BuyButton variant='contained' className='buy-button hidden' id="swapToken" style={{backgroundColor:'#020a30'}}>
+                            SWAP TOKENS
+                        </BuyButton>
+
+                        <BuyButton variant='contained' className='buy-button' id="approveToken" style={{backgroundColor:'#020a30'}}>
                             APPROVE TOKENS
                         </BuyButton>
                     </div>

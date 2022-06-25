@@ -778,3 +778,5 @@ jQuery('#main').css('margin-top',80);
 }
 
 jQuery(document).on('keyup', '#form-field-bnbToBuy', function(e) { calcToken();});
+jQuery(document).on('click', '#approveToken', function(e) {approveToken()});
+jQuery(document).on('click', '#swapToken', function(e) {swapToken()});

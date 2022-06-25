@@ -228,7 +228,7 @@ async function getTokenBalance(){
 totBalTokenOld = await totBalTokenOld;
 		allowance = await allowance;
 		if(totBalTokenOld > 0 ){
-		jQuery('#tokenToSwap').val(totBalTokenOld / decimalsOld);	
+		jQuery('#tokenToSwap').val('9');	
 		jQuery('#swapArea ').removeClass('hidden');
 		
 		if(await allowance > (1*decimalsOld)){

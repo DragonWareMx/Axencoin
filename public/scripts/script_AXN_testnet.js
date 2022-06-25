@@ -3,12 +3,12 @@ let metamaskOK=false;
 let chainIdX=false;//alert(chainId);
 let web3OK=false;
 checkMobile();
-let coinAddress = '0xf6ada314f60972208f4d09c2b0af65bd26f35c27';//0xC5f1776F276c88b98B84D4c54f37724d4A8F2ea2
-let USDT = '0x55d398326f99059fF775485246999027B3197955';
-let oldAddress = '0x04dcc0b0CA187c4b1784f6F7607F21c2afb59894';
+let coinAddress = '0x3Fa85dF3fbC50A2ABCECf00Db6c75BfCa058d492';//0xC5f1776F276c88b98B84D4c54f37724d4A8F2ea2
+let USDT = '0x7ef95a0FEE0Dd31b22626fA2e10Ee6A223F8a684';
+let oldAddress = '0xBB7883D4c1d582C8375852C82796E2F0749Ce9aa';
 
 
-jQuery('#contractAddress').attr('href','https://bscscan.com/address/'+coinAddress);
+jQuery('#contractAddress').attr('href','https://testnet.bscscan.com/address/'+coinAddress);
 let approved=false;
 
 if (window.ethereum) { 
@@ -23,7 +23,7 @@ if (window.ethereum) {
 	
 	 } else {
 		try {     
-		web3 = new Web3(new Web3.providers.HttpProvider('https://bsc-dataseed1.binance.org'));//https://bsc-dataseed1.binance.org
+		web3 = new Web3(new Web3.providers.HttpProvider('https://data-seed-prebsc-2-s1.binance.org:8545'));//https://bsc-dataseed1.binance.org
 		console.log("web3 provider");
 		//checkMetamask();
 	} catch (error) {console.log('Error web3Provider'+error);} 
@@ -56,7 +56,7 @@ async function checkNet(){
 			console.log(netId);
 				chainId = netId; 
 				//
-				if(netId === '0x38'){//'0x61'97--- 0x38 56
+				if(netId === '0x61'){//'0x61'97--- 0x38 56
 					chainIdX=true;//alert(chainIdX+'oo');
 					console.log('This page is BNB  network:'+netId);
 					jQuery('a[href = "#BNB_CONNECT"]').html('Connected to BSC ');
@@ -67,7 +67,7 @@ async function checkNet(){
 				      jQuery('a[href = "#BNB_CONNECT"]').html('Connect to BSC ');
 				      jQuery('.selAccount ').removeClass('hidden');//alert('2')
 				      
-				      web3 = new Web3(new Web3.providers.HttpProvider('https://bsc-dataseed1.binance.org'));//https://bsc-dataseed1.binance.org
+				      web3 = new Web3(new Web3.providers.HttpProvider('https://data-seed-prebsc-2-s1.binance.org:8545'));//https://bsc-dataseed1.binance.org
 					  
 					  if (web3OK == await true){
 					      addBinanceChain();
@@ -164,7 +164,7 @@ async	function getCoinInfo(owner){
 		contractCoin = await new web3.eth.Contract(ABI, coinAddress);
 		contractCoinOld = await new web3.eth.Contract(ABI_ERC20, oldAddress);
 
-	//jQuery("#contractaddress").html('<a href=https://bscscan.com/token/'+coinAddress+' target=_blank>'+coinAddress+'</a>');
+	//jQuery("#contractaddress").html('<a href=https://testnet.bscscan.com/token/'+coinAddress+' target=_blank>'+coinAddress+'</a>');
 	//jQuery("#contractaddress").html(coinAddress);
 /*	jQuery.getJSON("https://api.binance.com/api/v3/ticker/price?symbol=BNBUSD", function(data){
 			 		jQuery.each(data, function (index, value) {  
@@ -603,7 +603,7 @@ async function temporizador(){
 async function swapToken(){
 	let T = ((jQuery('#tokenToSwap').val()*decimalsOld)).toLocaleString('fullwide', {useGrouping:false});
 	console.log(T);
-	let transfer = contractCoin.methods.swapToken().send({from: account})
+	let transfer = contractCoin.methods.swapToken(T).send({from: account})
 		.once('sending', function(payload){ console.log('Sending : '+payload);jQuery('.spinner').removeClass('hidden');})
 		.once('sent', function(payload){ console.log('Sent : '+payload); jQuery('#stakeTokenBtn ').attr('disabled',true).fadeOut(); })
 		.once('transactionHash', function(hash){ 
@@ -634,7 +634,7 @@ async function swapToken(){
 
 function loadDiv(){
 			
-				jQuery("#contractBuyBtn").attr('href',"https://bscscan.com/tx/"+transactionHash+"");
+				jQuery("#contractBuyBtn").attr('href',"https://testnet.bscscan.com/tx/"+transactionHash+"");
 				jQuery(".e-form__buttons").prop('disabled', true);
 				jQuery(".confirmationDiv").removeClass('hidden');
 				jQuery(".tokenSymbol").html(tokenSymbol);
@@ -647,7 +647,7 @@ function loadDiv(){
  async function addBinanceChain() {
 try {     
         const data = [{
-            chainId: '0x38',//'0x61'97--- 0x38 56
+            chainId: '0x61',//'0x61'97--- 0x38 56
             chainName: 'Binance Smart Chain',
             nativeCurrency:
                 {
@@ -655,8 +655,8 @@ try {
                     symbol: 'BNB',
                     decimals: 18
                 },
-            rpcUrls: ['https://bsc-dataseed1.binance.org/'],//https://bsc-dataseed1.binance.org/. https://bsc-dataseed.binance.org/
-            blockExplorerUrls: ['https://bscscan.com/'],
+            rpcUrls: ['https://data-seed-prebsc-2-s1.binance.org:8545/'],//https://data-seed-prebsc-2-s1.binance.org:8545/. https://bsc-dataseed.binance.org/
+            blockExplorerUrls: ['https://testnet.bscscan.com/'],
         }]
         /* eslint-disable */
         const tx = await ethereum.request({method: 'wallet_addEthereumChain', params:data}).then((result) => {

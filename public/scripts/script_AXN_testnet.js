@@ -455,7 +455,7 @@ let transfer = contractCoin.methods.transfer(receiver,amount).send({from: accoun
       	});
 }
 	
-jQuery('.addToWallet').click(function(e) {
+jQuery(document).on('click', '.addToWallet', function(e) {
 e.preventDefault();
 addToWallet(e);
 

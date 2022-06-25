@@ -87,9 +87,10 @@ export const Compra = () => {
                                     fullWidth 
                                     label="You Will Get $AXN:" 
                                     className='hidden'
-                                    id="tokenToBuy" 
+                                    id="tokenToBuy"
                                     style={{marginTop:'50px'}}
                                 />
+                                <div ></div>
                             </Grid>
                         </Grid>
                         <Grid

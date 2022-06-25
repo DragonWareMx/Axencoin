@@ -546,7 +546,7 @@ function calcToken(){
 				AMOUNT = tokenAmount;
 				jQuery('.tokenCalc').removeClass('hidden');
 				jQuery('.tokenCalc').fadeOut().fadeIn();//.toFixed(8));//;
-				jQuery('#tokenToBuy').html((Number(web3.utils.fromWei(result, 'ether'))*0.95).toLocaleString(undefined, { minimumFractionDigits: 0 })+' AXN');//totBalToken;
+				jQuery('#tokenToBuy').val((Number(web3.utils.fromWei(result, 'ether'))*0.95).toLocaleString(undefined, { minimumFractionDigits: 0 })+' AXN');//totBalToken;
 	 				}
 				
 				});
@@ -782,3 +782,5 @@ if( isMobile.iOS() ) {
 //alert('Due to Apple restrictions Wallet is not enabled on iOS devices');
 jQuery('#main').css('margin-top',80);
 }
+
+jQuery(document).on('keyup', '#form-field-bnbToBuy', function(e) { calcToken();});

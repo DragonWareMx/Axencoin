@@ -80,16 +80,16 @@ export const Withdraw = () => {
                                 <BuyTextField 
                                     fullWidth 
                                     label="Insert amount to withdraw:" 
-                                    id="from" 
+                                    id="form-field-claim" 
                                     style={{marginTop:'50px'}}
                                 />
                             </Grid>
                         </Grid>
                         <Grid container justifyContent={'space-around'}>
-                            <BuyButton variant='contained' className='buy-button' style={{backgroundColor:'#020a30'}}>
+                            <BuyButton variant='contained' className='buy-button' id="claimBtnAll" style={{backgroundColor:'#020a30'}}>
                                 WITHDRAW ALL AXENCOIN
                             </BuyButton>
-                            <BuyButton variant='contained' className='buy-button'>
+                            <BuyButton variant='contained' id="claimBtn" className='buy-button'>
                                 WITHDRAW AXENCOIN
                             </BuyButton>
                         </Grid>

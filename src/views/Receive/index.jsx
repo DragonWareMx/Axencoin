@@ -117,13 +117,15 @@ export const Receive = () => {
                                 <p>
                                     <br/><br/>
                                     <a id="downloader" download="images/qr.png" className="hidden">
-                                    <button type="button" className="btn-primary" >Download</button></a>
+                                        <br></br>
+                                        <BuyButton type="button" variant='contained' id="btn-download" className='buy-button'>
+                                            DOWNLOAD
+                                        </BuyButton>
+                                    </a>
                                 </p>
 
                             </Grid>
-                            <BuyButton variant='contained' id="btn-download" className='buy-button'>
-                                DOWNLOAD
-                            </BuyButton>
+                            
                         {/* </Grid> */}
                     </div>
                 </Grid>

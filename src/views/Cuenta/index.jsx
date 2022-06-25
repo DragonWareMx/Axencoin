@@ -168,7 +168,7 @@ export const Cuenta = () => {
                             }}}
                             id="lastReceived"
                         >
-                            0.000 AXN
+                            
                         </Typography>
                     </Grid>
                 </Grid>
@@ -203,7 +203,7 @@ export const Cuenta = () => {
                             }}}
                             id="lastReceivedNum"
                         >
-                            0.00 AXN
+                            0
                         </Typography>
                     </Grid>
                 </Grid>

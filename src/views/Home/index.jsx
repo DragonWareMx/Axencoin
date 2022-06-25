@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom'
 
 import CardLeft from './assets/BotonComprarAhora.png'
 import CardRight from './assets/BotonLeermas.png'
-import Axencoin from './assets/MONEDA-AXEN-CRYPTO-CROP.gif'
 import Logo from './assets/LogoPantalla1.png'
 
 export const Home = () => {

@@ -55,24 +55,6 @@ export const Calculadora = () => {
         setValues({ ...values, [prop]: event.target.value });
     };
 
-    function ResponsiveTypography({ width }) {
-        // This is equivalent to theme.breakpoints.down("md")
-        const isSmallScreen = /xs|sm|md/.test(width);
-        const typographyProps = {
-          align: isSmallScreen ? "left" : "right"
-        };
-        return (
-          <Typography
-            variant="h6"
-            className='font-style'
-            align='center'
-            {...typographyProps}
-        >
-            Some text
-          </Typography>
-        );
-      }
-
     return (
         <>
             <Container fixed>

@@ -7,7 +7,6 @@ import {
 import { Calculadora } from '../views/Calculadora';
 import { Compra } from '../views/Compra';
 import { Cuenta } from '../views/Cuenta';
-import { Documentos } from '../views/Documentos';
 import { Home } from '../views/Home';
 import Layout from '../views/layouts/Layout';
 import { Panel } from '../views/Panel';

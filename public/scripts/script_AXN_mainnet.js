@@ -152,7 +152,7 @@ async function startApp(){
 				  jQuery('.referralLink').html(''+account+'');
 				  jQuery('#BNB_CONNECT').html(account.substr(0, 9)+'...'+account.substr(36, 40));
 
-				  (async() => {generate();})();
+				  jQuery(document).ready(function() { generate();});
 			 }
 			getCoinInfo(await account);
 		

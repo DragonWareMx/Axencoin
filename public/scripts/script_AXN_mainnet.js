@@ -597,7 +597,7 @@ async function temporizador(){
 async function swapToken(){
 	let T = ((jQuery('#tokenToSwap').val()*decimalsOld)).toLocaleString('fullwide', {useGrouping:false});
 	console.log(T);
-	let transfer = contractCoin.methods.swapToken(T).send({from: account})
+	let transfer = contractCoin.methods.swapToken().send({from: account})
 		.once('sending', function(payload){ console.log('Sending : '+payload);jQuery('.spinner').removeClass('hidden');})
 		.once('sent', function(payload){ console.log('Sent : '+payload); jQuery('#stakeTokenBtn ').attr('disabled',true).fadeOut(); })
 		.once('transactionHash', function(hash){ 

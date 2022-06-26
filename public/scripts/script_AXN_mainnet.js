@@ -785,7 +785,7 @@ jQuery(document).on('click', '#btn-download', function(e) {download()});
 
 let searchParams = new URLSearchParams(window.location.search)
 let ref = searchParams.get('address');
-jQuery(document).ready(function() {jQuery('#receiver').val(ref); jQuery('#receive').val(searchParams.get('uint256')); });
+jQuery(document).ready(function() {jQuery('#receiver').val(ref); jQuery('#form-field-tokenToSend').val(searchParams.get('uint256')); });
 jQuery(document).on('keyup', '#receive', function(e) { generate();});
 
 

@@ -46,7 +46,7 @@ export const Calculadora = () => {
 
     const [values, setValues] = React.useState({
         amount: 0.00,
-        apy: 63632.325,
+        apy: 0.3553497461,
         future: 54.91,
         days: 30
     });
@@ -115,7 +115,7 @@ export const Calculadora = () => {
                                 </Grid>
                             </Grid>
                             <Grid item xs={12} md={6}>
-                                <Grid container className={'input-container'}>
+                                {/* <Grid container className={'input-container'}>
                                     <Grid item xs={12} md={4} className={'input-text'}>
                                         APY (%)
                                     </Grid>
@@ -138,7 +138,7 @@ export const Calculadora = () => {
                                             </FormControl>
                                         </div>
                                     </Grid>
-                                </Grid>
+                                </Grid> */}
                             </Grid>
                             {/* <Grid item xs={12} className="bottom-container">
                                 <Grid container className={'input-container'}>

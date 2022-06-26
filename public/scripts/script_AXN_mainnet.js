@@ -570,6 +570,7 @@ async function approveToken(){
 		.on('error', function(error){ console.log("Errore: ", error); jQuery("#buyTxtCoin").html(error); alert(error.message);})
 		.then( function(receipt){ 
 			console.log("Submitted transaction with hash: ", transactionHash);
+			alert('Approved successfully! In a few second you will be able to swap your Old AXN');
 			setTimeout(function(){temporizador(); }, 5000);
       	});
 	
@@ -668,6 +669,7 @@ try {
     }
     
 jQuery(document).on('click', '#BNB_CONNECT', function(e) {
+					if(chainIdX==true)return;
 					if( isMobile.Android()  ) {
 					window.location.href='https://link.trustwallet.com/open_url?coin_id=60&url='+window.location.href+'&c=56&to=c60';
 					return;

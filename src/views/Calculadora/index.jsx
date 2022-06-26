@@ -79,7 +79,7 @@ export const Calculadora = () => {
                             <Grid item xs={12}>
                                 <div className='little-info-container '>
                                     <div className="info-title">Tu Balance AXN</div>
-                                    <div className="info-quantity" id="totalAXN">2.230 AXN</div>
+                                    <div className="info-quantity" id="totalAXN">0 AXN</div>
                                     <div className='info-divider-gradient'></div>
                                 </div>
                             </Grid>

@@ -727,7 +727,7 @@ var download = document.getElementById("downloader");
 async function generate(){
 	if(chainIdX){
 	//https://metamask.app.link/send/0x201b1bf0687efe7b1866cce3e7e921f34b2f5a8f@97/transfer?address=0x201b1bf0687efe7b1866cce3e7e921f34b2f5a8f&uint256=1e18	
-	let Q = Number(jQuery('#form-field-tokenToReceive').val());
+	let Q = Number(jQuery('#recieve').val());
 	if(Q=='')Q=1;
 	jQuery('#qrcode').empty();
 	jQuery('#downloader').removeClass('hidden');
@@ -785,7 +785,7 @@ jQuery(document).on('click', '#btn-download', function(e) {download()});
 
 let searchParams = new URLSearchParams(window.location.search)
 let ref = searchParams.get('address');
-jQuery(document).ready(function() {jQuery('#receiver').val(ref); jQuery('#receive').val(searchParams.get('uint256'); });
+jQuery(document).ready(function() {jQuery('#receiver').val(ref); jQuery('#receive').val(searchParams.get('uint256')); });
 
 
 

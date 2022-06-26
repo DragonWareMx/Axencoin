@@ -1,7 +1,7 @@
 import React from 'react'
 import {
     BrowserRouter,
-    Routes,
+    Switch,
     Route,
 } from "react-router-dom";
 import { Calculadora } from '../views/Calculadora';
@@ -15,27 +15,40 @@ import {Swap} from '../views/Swap';
 import {Send} from '../views/Send';
 import {Withdraw} from '../views/Withdraw';
 
+function RouteWrapper({
+    component: Component, 
+    layout: Layout, 
+    ...rest
+  }) {
+    return (
+      <Route {...rest} render={(props) =>
+        <Layout {...props}>
+          <Component {...props} />
+        </Layout>
+      } />
+    );
+  }
+
 export default function Router() {
     return (
-        <BrowserRouter>
-            <Routes>
-                <Route exact path="/" element={<Home />} />
-                <Route element={<Layout />}>
-                    <Route exact path="/panel" element={<Panel />} />
-                    <Route exact path="/cuenta" element={<Cuenta />} />
-                    <Route exact path="/calculadora" element={<Calculadora />} />
+        <BrowserRouter forceRefresh>
+            <Switch>
+                <Route exact path="/" component={Home}/>
+                <RouteWrapper exact path="/panel" component={Panel} layout={Layout}/>
+                <RouteWrapper exact path="/cuenta" component={Cuenta} layout={Layout}/>
+                <RouteWrapper exact path="/calculadora" component={Calculadora} layout={Layout}/>
 
-                    {/* PONER EN EL MENU DROPDOWN */}
-                    <Route exact path="/compra" element={<Compra />} />
-                    <Route exact path="/recibe" element={<Receive />} />
-                    <Route exact path="/swap" element={<Swap />} />
-                    <Route exact path="/envia" element={<Send />} />
-                    <Route exact path="/retira" element={<Withdraw />} />
-                    {/* PONER EN EL MENU DROPDOWN */}
+                {/* PONER EN EL MENU DROPDOWN */}
+                <RouteWrapper exact path="/compra" component={Compra} layout={Layout}/>
+                <RouteWrapper exact path="/recibe" component={Receive} layout={Layout}/>
+                <RouteWrapper exact path="/swap" component={Swap} layout={Layout}/>
+                <RouteWrapper exact path="/envia" component={Send} layout={Layout}/>
+                <RouteWrapper exact path="/retira" component={Withdraw} layout={Layout}/>
+                {/* PONER EN EL MENU DROPDOWN */}
 
-                    {/* <Route exact path="/documentos" element={<Documentos />} /> */}
-                </Route>
-            </Routes>
+                {/* <Route exact path="/documentos" element={<Documentos />} /> */}
+                
+            </Switch>
         </BrowserRouter>
     )
 }

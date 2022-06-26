@@ -1,6 +1,6 @@
 import { AppBar, Box, Button, Container, Drawer, IconButton, List, ListItem, ListItemButton, ListItemText, Toolbar } from '@mui/material'
 import React from 'react'
-import { Link, NavLink, Outlet } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import './styles/style.css'
 
 import Logo from './assets/Logopequeno.png'
@@ -16,7 +16,7 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 const drawerWidth = 240;
 
-const Layout = () => {
+const Layout = ({children}) => {
 	const theme = useTheme();
 
 	const [open, setOpen] = React.useState(false);
@@ -72,7 +72,7 @@ const Layout = () => {
 							<Button
 								component={NavLink}
 								sx={{ textTransform: "none" }}
-								style={isActive => ({ color: isActive.isActive ? "#0071ce" : "white" })}
+								
 								to="/panel"
 							>
 								Panel
@@ -108,7 +108,7 @@ const Layout = () => {
 							<Button
 								component={NavLink}
 								sx={{ textTransform: "none" }}
-								style={isActive => ({ color: isActive.isActive ? "#0071ce" : "white" })}
+								
 								to="/cuenta"
 							>
 								Cuenta
@@ -116,7 +116,7 @@ const Layout = () => {
 							<Button
 								component={NavLink}
 								sx={{ textTransform: "none" }}
-								style={isActive => ({ color: isActive.isActive ? "#0071ce" : "white" })}
+								
 								to="/calculadora"
 							>
 								Calculadora
@@ -145,7 +145,7 @@ const Layout = () => {
 			</AppBar>
 
 			<Container style={{ paddingBottom: 60 }}>
-				<Outlet />
+				{children}
 			</Container>
 
 			<Drawer
@@ -173,7 +173,7 @@ const Layout = () => {
 						<ListItemButton
 							component={NavLink}
 							sx={{ textTransform: "none" }}
-							style={isActive => ({ color: isActive.isActive ? "#0071ce" : "inherit" })}
+							
 							to="/panel"
 						>
 							<ListItemText primary="Panel" />
@@ -184,7 +184,7 @@ const Layout = () => {
 						<ListItemButton
 							component={NavLink}
 							sx={{ textTransform: "none" }}
-							style={isActive => ({ color: isActive.isActive ? "#0071ce" : "inherit" })}
+							
 							to="/compra"
 						>
 							<ListItemText primary="Compra AXN" />
@@ -195,7 +195,7 @@ const Layout = () => {
 						<ListItemButton
 							component={NavLink}
 							sx={{ textTransform: "none" }}
-							style={isActive => ({ color: isActive.isActive ? "#0071ce" : "inherit" })}
+							
 							to="/cuenta"
 						>
 							<ListItemText primary="Cuenta" />
@@ -206,7 +206,7 @@ const Layout = () => {
 						<ListItemButton
 							component={NavLink}
 							sx={{ textTransform: "none" }}
-							style={isActive => ({ color: isActive.isActive ? "#0071ce" : "inherit" })}
+							
 							to="/calculadora"
 						>
 							<ListItemText primary="Calculadora" />

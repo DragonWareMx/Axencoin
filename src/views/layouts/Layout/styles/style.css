@@ -77,3 +77,11 @@
     max-width: 90%;
     display: inline-block;
 }
+
+.MuiButton-text{
+    color: white !important;
+}
+
+.MuiButton-text.active{
+    color: #0071ce !important;
+}

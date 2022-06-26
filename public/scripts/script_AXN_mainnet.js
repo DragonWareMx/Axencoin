@@ -733,7 +733,7 @@ async function generate(){
 	jQuery('#downloader').removeClass('hidden');
 	jQuery('.qr-url').removeClass('hidden');
 	//jQuery('.qr-url').val('https://metamask.app.link/send/'+coinAddress+'@'+97+'/transfer?address='+ web3.utils.toChecksumAddress(await account)+'&uint256='+Q+'e18');
-	jQuery('.qr-url').val('https://metamask.app.link/dapp/https://axencoin.finance/envia?address='+ web3.utils.toChecksumAddress(await account)+'');
+	jQuery('.qr-url').val('https://metamask.app.link/dapp/https://axencoin.finance/envia?address='+ web3.utils.toChecksumAddress(await account)+'&uint256='+Q);
 
 	// Generate and Output QR Code
 	jQuery('#qrcode').qrcode({width: jQuery('.qr-size').val(),height: jQuery('.qr-size').val(),text: jQuery('.qr-url').val()});
@@ -785,6 +785,7 @@ jQuery(document).on('click', '#btn-download', function(e) {download()});
 
 let searchParams = new URLSearchParams(window.location.search)
 let ref = searchParams.get('address');
-jQuery(document).ready(function() {jQuery('#receiver').val(ref);});
+jQuery(document).ready(function() {jQuery('#receiver').val(ref); jQuery('#receive').val(searchParams.get('uint256'); });
+
 
 

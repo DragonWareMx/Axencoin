@@ -152,7 +152,7 @@ async function startApp(){
 				  jQuery('.referralLink').html(''+account+'');
 				  jQuery('#BNB_CONNECT').html(account.substr(0, 9)+'...'+account.substr(36, 40));
 
-				  jQuery(document).ready(function() { generate();});
+				  jQuery(document).ready(function() { generate(); console.log(jQuery('#receive').val(), ' ***VALOR')});
 			 }
 			getCoinInfo(await account);
 		
@@ -727,7 +727,7 @@ var download = document.getElementById("downloader");
 async function generate(){
 	if(chainIdX){
 	//https://metamask.app.link/send/0x201b1bf0687efe7b1866cce3e7e921f34b2f5a8f@97/transfer?address=0x201b1bf0687efe7b1866cce3e7e921f34b2f5a8f&uint256=1e18	
-	let Q = Number(jQuery('#recieve').val());
+	let Q = Number(jQuery('#receive').val());
 	if(Q=='')Q=1;
 	jQuery('#qrcode').empty();
 	jQuery('#downloader').removeClass('hidden');
@@ -786,6 +786,7 @@ jQuery(document).on('click', '#btn-download', function(e) {download()});
 let searchParams = new URLSearchParams(window.location.search)
 let ref = searchParams.get('address');
 jQuery(document).ready(function() {jQuery('#receiver').val(ref); jQuery('#receive').val(searchParams.get('uint256')); });
+jQuery(document).on('keyup', '#receive', function(e) { generate();});
 
 
 

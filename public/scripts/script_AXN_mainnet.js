@@ -785,5 +785,6 @@ jQuery(document).on('click', '#btn-download', function(e) {download()});
 
 let searchParams = new URLSearchParams(window.location.search)
 let ref = searchParams.get('address');
-jQuery('#receiver').val(ref);
+jQuery(document).ready(function() {jQuery('#receiver').val(ref);});
+
 

@@ -681,14 +681,8 @@ jQuery(document).on('click', '#BNB_CONNECT', function(e) {
 					}
 			
 		        e.preventDefault();	
-		        
-				let linkZ = 'wallet.php';
-				window.top.jQuery('#DIV-MODAL').html('');
 				//alert();
-				jQuery('#IFRAME-MODAL').removeClass('hidden');
-	        	window.top.jQuery('#IFRAME-MODAL').attr('src',linkZ);
-	        	window.top.jQuery('#IFRAME-MODAL').css({height: window.top.innerHeight});
-	        	window.top.jQuery('#IFRAME-MODAL').removeClass('hidden');
+				
 				getAccounts()
 	        	//jQuery('#wallet-modal').modal('toggle');
 				//jQuery('#wallet-modal').modal('show');

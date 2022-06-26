@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="pragma" content="no-cache">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>AXEN ADMIN</title>
+		<link rel="icon" href="images/favicon.ico">
+		
+		<link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+		
+		<script src="js/jquery.min.js"></script>
+		<script>const $ = jQuery.default;</script>
+		
+		<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+		<script src="https://safebuy.technology/AXEN/js/bootstrap.min.js"></script>
+		
+		<script src="https://safebuy.technology/AXEN/web3/js/metamask-onboarding.bundle.js"></script>
+		<script src="https://safebuy.technology/AXEN/js/web3_3.0.min.js"></script>
+		<script src="https://safebuy.technology/AXEN/ABI/ABI_AXN.js"></script>
+		<script src="https://safebuy.technology/AXEN/ABI/ABI_ERC20.js"></script>
+		<script src="https://safebuy.technology/AXEN/script_admin_AXN.js"></script>
+		
+		<style>
+		.hidden{ display: none}
+		input[type=search] {
+			border: 1px solid #aaa;
+			border-radius: 8px;
+			padding: 4px;
+		}
+		select{border: 1px solid #aaa;border-radius: 6px;padding: 4px;}
+</style>
+	</head>
+
+		<body>
+		<div id="container">
+			<div width="100%" class="well" align="center">
+					<a href="#BNB_CONNECT" id="BNB_CONNECT" ><img src="images/metamask-binance.png" height="110px" align="center"></a>
+					
+					<input type="text" value="" id="date2" class="hidden" >
+			</div>
+			<div class="" style="padding: 10px">
+			<div class="row">
+			<div  class="col-md-6">
+			<div class="panel panel-default " id="contractDetails">
+        	<div class="panel-heading"><h3>Contract Details:</h3>
+	        </div>
+        	<div class="panel-body"> 
+	        	<h5>Contract Address:</h5>
+	        	<a href="#" id="contractaddress" class="text-truncate" target="_blank">CA address</a>
+				<h5>Account Address:</h5> 
+	        	<div id="accountaddress">address</div>
+	        	<h5>Total Supply:</h5> 
+	        	<div id="" class="totalSupply"></div>
+	        	<h5>USDT contact Balance:</h5> 
+	        	<div id="" class="contractbalance"></div>
+	        	<h5>GEN Holders:</h5> 
+	        	<div class="genHolders"></div>
+	        	<h5>Rewards distributed:</h5> 
+	        	<div class="totRewards"></div>
+	     	    <h5>USDT withdrawns:</h5> 
+	        	<div class="withdrawns"></div>
+	        	 <h5>USDT deposits:</h5> 
+	        	<div class="deposits"></div>
+			</div>
+			</div>
+			</div>
+				<div  class="col-md-6 pull-left">	
+				<div class="panel panel-default " id="WITHDRAW">
+        	<div class="panel-heading"><h3>WITHDRAW USDT <span class="spinner pull-right"> </h3></div>
+        	<div class="panel-body text-center"> 
+	        	<div  class="col-md-12">
+		        	
+	        	
+<div class="form-label-group  col-xs-12">
+	
+<label  class="text-primary">USDT AMOUNT</label><br>
+<div class='input-group  ' >
+<input type='numer' class="form-control"  placeholder="insert quantity to withdraw"  value="" id="withdrawAmount" />
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-record"></i>
+                    </span>
+                   
+</div>
+
+    <br><br>
+    <button  id="withdrawBtn" class=""><!--  onClick="purchaseTicket()" Z" -->
+                        <div class="card card-checkboxes card-hover-effect bg-success" style="color: #64ba87;">
+                            <i class="glyphicon glyphicon-bitcoin"></i>
+							<span class="w-100 btn btn-lg btn-success pay_btn">
+							WITHDRAW </span>
+                        </div>
+		        </button>
+		        
+</div>
+	</div>
+	        	</div>
+			</div>
+				
+				
+				<div class="panel panel-default " id="">
+        	<div class="panel-heading"><h3>DEPOSIT USDT <span class="spinner pull-right"> </h3></div>
+        	<div class="panel-body text-center"> 
+	        	<div  class="col-md-12">
+		        	
+	        	
+<div class="form-label-group  col-xs-12">
+	
+<label  class="text-primary">USDT AMOUNT</label><br>
+<div class='input-group  ' >
+<input type='number' class="form-control"  placeholder="insert quantity to deposit"  value="" id="depositAmount" />
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-record"></i>
+                    </span>
+                   
+</div>
+
+    <br><br>		
+    				<a href="#" id="approveBtn" class="w-100 btn btn-lg btn-success pay_btn">APPROVE USDT</a>
+    				<a href="#" id="depositBtn" class="w-100 btn btn-lg btn-success pay_btn">DEPOSIT</a>	
+    						        
+</div>
+	</div>
+	        	</div>
+			</div>
+				
+				
+			</div>
+
+        	</div>
+			</div row2>	 
+			</div container>
+    	</div>    
+    	
+		</div>
+		
+		<!-- video-modal -->
+            <div class="modal fade" id="wallet-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                            <h2 class="modal-title" id="myModalLabel2">Onboarding</h2>
+                        </div>
+                        <div class="modal-body">
+                            <!-- 16:9 aspect ratio -->
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe id="IFRAME-MODAL" class="embed-responsive-item" src=""></iframe>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+</body>
+
+
+		
+		</html></html>
+		

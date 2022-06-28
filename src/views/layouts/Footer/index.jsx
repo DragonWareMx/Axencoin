@@ -3,7 +3,7 @@ import './styles/style.css'
 import { Container, IconButton } from '@mui/material'
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
-import Moneda from './assets/NewMoneda.png'
+import Moneda from './assets/iconoAxenCoin.png'
 
 export const Footer = () => {
     return (
@@ -22,7 +22,7 @@ export const Footer = () => {
                         </IconButton>
                     </div>
                     <div style={{ display: 'flex' }}>
-                        <img src={Moneda} alt="Logo" height={65} />
+                        <img src={Moneda} alt="Logo" height={50} />
                     </div>
                 </div>
             </Container>

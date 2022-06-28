@@ -68,7 +68,7 @@ const Layout = ({children}) => {
 								<img src={Logo} alt="Logo" className='logo-header' />
 							</Link>
 						</Box>
-						<Box sx={{ display: { xs: 'flex', md: 'none' }, flexGrow: 1, justifyContent: "left" }} className='nav-links-container'>
+						<Box sx={{ display: { xs: 'flex', md: 'none' }, justifyContent: "left" }} className='nav-links-container'>
 							<IconButton
 								aria-label="open drawer"
 								edge="end"
@@ -77,6 +77,11 @@ const Layout = ({children}) => {
 							>
 								<MenuIcon />
 							</IconButton>
+						</Box>
+						<Box sx={{ display: { xs: 'flex', flexGrow: 1, md: 'none' }, justifyContent: "center" }} className='nav-links-container'>
+							<Link to='/'>
+								<img src={Logo} alt="Logo" className='logo-header' />
+							</Link>
 						</Box>
 						<Box sx={{ display: { xs: 'none', md: 'flex' } }} className='nav-links-container'>
 							<Button
@@ -187,96 +192,96 @@ const Layout = ({children}) => {
 					</Link>
 				</DrawerHeader>
 				<List>
-						<ListItemButton
-							component={NavLink}
-							sx={{ textTransform: "none" }}
-							selected={location.pathname === '/panel'}
-							to="/panel"
-						>
-							<ListItemText primary="Panel" />
-						</ListItemButton>
+					<ListItemButton
+						component={NavLink}
+						sx={{ textTransform: "none" }}
+						selected={location.pathname === '/panel'}
+						to="/panel"
+					>
+						<ListItemText primary="Panel" />
+					</ListItemButton>
 
-						<ListItemButton
-							onClick={handleClickList}
-							sx={{ textTransform: "none" }}
-							selected={(location.pathname === '/compra' || location.pathname === '/recibe' || location.pathname === '/swap' || location.pathname === '/envia' || location.pathname === '/retira')}
-						>
-							<ListItemText primary="Compra AXN" />
-							{openList ? <ExpandLess /> : <ExpandMore />}
-						</ListItemButton>
-						<Collapse in={openList} timeout="auto" unmountOnExit>
-							<List component="div" disablePadding>
-								<ListItemButton
-									component={NavLink}
-									sx={{ textTransform: "none", pl: 4 }}
-									selected={location.pathname === '/compra'}
-									to="/compra"
-								>
-									<ListItemText primary="Compra" />
-								</ListItemButton>
+					<ListItemButton
+						onClick={handleClickList}
+						sx={{ textTransform: "none" }}
+						selected={(location.pathname === '/compra' || location.pathname === '/recibe' || location.pathname === '/swap' || location.pathname === '/envia' || location.pathname === '/retira')}
+					>
+						<ListItemText primary="Compra AXN" />
+						{openList ? <ExpandLess /> : <ExpandMore />}
+					</ListItemButton>
+					<Collapse in={openList} timeout="auto" unmountOnExit>
+						<List component="div" disablePadding>
+							<ListItemButton
+								component={NavLink}
+								sx={{ textTransform: "none", pl: 4 }}
+								selected={location.pathname === '/compra'}
+								to="/compra"
+							>
+								<ListItemText primary="Compra" />
+							</ListItemButton>
 
-								<ListItemButton
-									component={NavLink}
-									sx={{ textTransform: "none", pl: 4 }}
-									selected={location.pathname === '/recibe'}
-									to="/recibe"
-								>
-									<ListItemText primary="Recibe" />
-								</ListItemButton>
+							<ListItemButton
+								component={NavLink}
+								sx={{ textTransform: "none", pl: 4 }}
+								selected={location.pathname === '/recibe'}
+								to="/recibe"
+							>
+								<ListItemText primary="Recibe" />
+							</ListItemButton>
 
-								<ListItemButton
-									component={NavLink}
-									sx={{ textTransform: "none", pl: 4 }}
-									selected={location.pathname === '/swap'}
-									to="/swap"
-								>
-									<ListItemText primary="Swap" />
-								</ListItemButton>
+							<ListItemButton
+								component={NavLink}
+								sx={{ textTransform: "none", pl: 4 }}
+								selected={location.pathname === '/swap'}
+								to="/swap"
+							>
+								<ListItemText primary="Swap" />
+							</ListItemButton>
 
-								<ListItemButton
-									component={NavLink}
-									sx={{ textTransform: "none", pl: 4 }}
-									selected={location.pathname === '/envia'}
-									to="/envia"
-								>
-									<ListItemText primary="Envia" />
-								</ListItemButton>
+							<ListItemButton
+								component={NavLink}
+								sx={{ textTransform: "none", pl: 4 }}
+								selected={location.pathname === '/envia'}
+								to="/envia"
+							>
+								<ListItemText primary="Envia" />
+							</ListItemButton>
 
-								<ListItemButton
-									component={NavLink}
-									sx={{ textTransform: "none", pl: 4 }}
-									selected={location.pathname === '/retira'}
-									to="/retira"
-								>
-									<ListItemText primary="Retira" />
-								</ListItemButton>
-							</List>
-						</Collapse>
+							<ListItemButton
+								component={NavLink}
+								sx={{ textTransform: "none", pl: 4 }}
+								selected={location.pathname === '/retira'}
+								to="/retira"
+							>
+								<ListItemText primary="Retira" />
+							</ListItemButton>
+						</List>
+					</Collapse>
 
-						<ListItemButton
-							component={NavLink}
-							sx={{ textTransform: "none" }}
-							selected={location.pathname === '/cuenta'}
-							to="/cuenta"
-						>
-							<ListItemText primary="Cuenta" />
-						</ListItemButton>
+					<ListItemButton
+						component={NavLink}
+						sx={{ textTransform: "none" }}
+						selected={location.pathname === '/cuenta'}
+						to="/cuenta"
+					>
+						<ListItemText primary="Cuenta" />
+					</ListItemButton>
 
-						<ListItemButton
-							component={NavLink}
-							sx={{ textTransform: "none" }}
-							selected={location.pathname === '/calculadora'}
-							to="/calculadora"
-						>
-							<ListItemText primary="Calculadora" />
-						</ListItemButton>
+					<ListItemButton
+						component={NavLink}
+						sx={{ textTransform: "none" }}
+						selected={location.pathname === '/calculadora'}
+						to="/calculadora"
+					>
+						<ListItemText primary="Calculadora" />
+					</ListItemButton>
 
-						<ListItemButton
-							className="button-navigation"
-							onClick={() => window.open('https://docs.axencoin.finance/', '_blank', 'noopener,noreferrer')}
-						>
-							<ListItemText primary="Documentos" />
-						</ListItemButton>
+					<ListItemButton
+						className="button-navigation"
+						onClick={() => window.open('https://docs.axencoin.finance/', '_blank', 'noopener,noreferrer')}
+					>
+						<ListItemText primary="Documentos" />
+					</ListItemButton>
 				</List>
 			</Drawer>
 

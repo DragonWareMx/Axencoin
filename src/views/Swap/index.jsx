@@ -1,4 +1,4 @@
-import { Grid } from '@mui/material'
+import { Alert, Grid, Typography } from '@mui/material'
 import { Container } from '@mui/system'
 import React from 'react'
 import './styles/style.css'
@@ -7,6 +7,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import TextField from '@mui/material/TextField';
 import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
+
 
 const BuyTextField = styled(TextField)({
     '& label.Mui-focused': {
@@ -62,12 +63,12 @@ export const Swap = () => {
                             <Grid item style={{fontSize:'22px'}}>SWAP YOUR OLD to $AXN</Grid>
                             <Grid item>
                                 <Grid container>
-                                    <div onClick={()=>alert('reset')} className='buy-options'>
+                                    {/* <div onClick={()=>alert('reset')} className='buy-options'>
                                         <RestartAltIcon/>
                                     </div>
                                     <div onClick={()=>alert('settings')} className='buy-options'>
                                         <SettingsIcon/>
-                                    </div>
+                                    </div> */}
                                 </Grid>
                             </Grid>
                         </Grid>
@@ -99,6 +100,11 @@ export const Swap = () => {
                         <BuyButton variant='contained' className='buy-button' id="approveToken" style={{backgroundColor:'#020a30'}}>
                             APPROVE TOKENS
                         </BuyButton>
+                        
+                        <Alert sx={{ background: "rgb(0,0,0,0.5)", color: "white", mt: 2 }} severity="info">
+                        Metamask debe solicitar permiso para 
+                            acceder a los tokens antiguos, sin este paso no es posible el intercambio.
+                        </Alert>
                     </div>
                 </Grid>
             </Grid>

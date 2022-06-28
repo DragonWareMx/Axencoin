@@ -621,7 +621,7 @@ async function swapToken(){
 			*/
 			getTokenBalance();
 			getCoinInfo(account);
-			alert('Congratulations! You\'ve finalized you Token Swap');
+			alert('Congratulations! You\'ve finalized your Token Swap');
 //window.top.location.reload();			
 			setTimeout(function(){ getTokenBalance()} ,800);
       	});

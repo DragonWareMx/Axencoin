@@ -1,6 +1,6 @@
-import { AppBar, Box, Button, Container, Drawer, IconButton, List, ListItem, ListItemButton, ListItemText, Toolbar } from '@mui/material'
+import { AppBar, Box, Button, Collapse, Container, Drawer, IconButton, List, ListItem, ListItemButton, ListItemText, Toolbar } from '@mui/material'
 import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import './styles/style.css'
 
 import Logo from './assets/Logopequeno.png'
@@ -13,10 +13,13 @@ import MenuItem from '@mui/material/MenuItem';
 
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import ExpandLess from '@mui/icons-material/ExpandLess';
+import ExpandMore from '@mui/icons-material/ExpandMore';
 
 const drawerWidth = 240;
 
 const Layout = ({children}) => {
+	const location = useLocation();
 	const theme = useTheme();
 
 	const [open, setOpen] = React.useState(false);
@@ -47,6 +50,13 @@ const Layout = ({children}) => {
 		setAnchorEl(null);
 	};
 
+	//LIST SUB MENU
+	const [openList, setOpenList] = React.useState(false);
+
+	const handleClickList = () => {
+		setOpenList(!openList);
+	};
+
 	return (
 		// <ThemeProvider theme={theme}>
 		<div className="layout-container">
@@ -58,7 +68,7 @@ const Layout = ({children}) => {
 								<img src={Logo} alt="Logo" className='logo-header' />
 							</Link>
 						</Box>
-						<Box sx={{ display: { xs: 'flex', md: 'none' }, flexGrow: 1, justifyContent: "left" }} className='nav-links-container'>
+						<Box sx={{ display: { xs: 'flex', md: 'none' }, justifyContent: "left" }} className='nav-links-container'>
 							<IconButton
 								aria-label="open drawer"
 								edge="end"
@@ -68,19 +78,29 @@ const Layout = ({children}) => {
 								<MenuIcon />
 							</IconButton>
 						</Box>
+						<Box sx={{ display: { xs: 'flex', flexGrow: 1, md: 'none' }, justifyContent: "center" }} className='nav-links-container'>
+							<Link to='/'>
+								<img src={Logo} alt="Logo" className='logo-header' />
+							</Link>
+						</Box>
 						<Box sx={{ display: { xs: 'none', md: 'flex' } }} className='nav-links-container'>
 							<Button
 								component={NavLink}
 								sx={{ textTransform: "none" }}
-								
 								to="/panel"
 							>
 								Panel
 							</Button>
 							<Button
 								sx={{ textTransform: "none" }}
-								className="button-dropdown"
+								className={"button-dropdown" + ((location.pathname === '/compra' || location.pathname === '/recibe' || location.pathname === '/swap' || location.pathname === '/envia' || location.pathname === '/retira') ? " active" : "")}
 								onClick={handleClick}
+								// component={NavLink}
+								// to="#"
+								// isActive={(match, location) => {
+								// 	console.log(match, location);
+								// 	return true
+								// }}
 							>
 								Compra AXN
 							</Button>
@@ -95,15 +115,15 @@ const Layout = ({children}) => {
 								PaperProps={{
 									style: {
 										width: '140px',
-										backgroundColor: "#0071ce"
+										// backgroundColor: "#0071ce"
 									},
 								}}
 							>
-								<MenuItem onClick={handleClose}><Link to={'/compra'} className="menu-item">Compra</Link></MenuItem>
-								<MenuItem onClick={handleClose}><Link to={'/recibe'} className="menu-item">Recibe</Link></MenuItem>
-								<MenuItem onClick={handleClose}><Link to={'/swap'} className="menu-item">Swap</Link></MenuItem>
-								<MenuItem onClick={handleClose}><Link to={'/envia'} className="menu-item">Envia</Link></MenuItem>
-								<MenuItem onClick={handleClose}><Link to={'/retira'} className="menu-item">Retira</Link></MenuItem>
+								<MenuItem onClick={handleClose} selected={location.pathname === '/compra'}><Link to={'/compra'} className="menu-item">Compra</Link></MenuItem>
+								<MenuItem onClick={handleClose} selected={location.pathname === '/recibe'}><Link to={'/recibe'} className="menu-item">Recibe</Link></MenuItem>
+								<MenuItem onClick={handleClose} selected={location.pathname === '/swap'}><Link to={'/swap'} className="menu-item">Swap</Link></MenuItem>
+								<MenuItem onClick={handleClose} selected={location.pathname === '/envia'}><Link to={'/envia'} className="menu-item">Envia</Link></MenuItem>
+								<MenuItem onClick={handleClose} selected={location.pathname === '/retira'}><Link to={'/retira'} className="menu-item">Retira</Link></MenuItem>
 							</Menu>
 							<Button
 								component={NavLink}
@@ -154,14 +174,17 @@ const Layout = ({children}) => {
 					flexShrink: 0,
 					'& .MuiDrawer-paper': {
 						width: drawerWidth,
+						background: "rgba(0,0,0,0.7)",
+						color: "white"
 					},
 				}}
-				variant="persistent"
+				variant="temporary"
 				anchor="right"
 				open={open}
+				onClose={handleDrawerClose}
 			>
 				<DrawerHeader>
-					<IconButton onClick={handleDrawerClose}>
+					<IconButton onClick={handleDrawerClose} sx={{ color: "white" }} >
 						{theme.direction === 'rtl' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
 					</IconButton>
 					<Link to='/'>
@@ -169,58 +192,96 @@ const Layout = ({children}) => {
 					</Link>
 				</DrawerHeader>
 				<List>
-					<ListItem>
-						<ListItemButton
-							component={NavLink}
-							sx={{ textTransform: "none" }}
-							
-							to="/panel"
-						>
-							<ListItemText primary="Panel" />
-						</ListItemButton>
-					</ListItem>
+					<ListItemButton
+						component={NavLink}
+						sx={{ textTransform: "none" }}
+						selected={location.pathname === '/panel'}
+						to="/panel"
+					>
+						<ListItemText primary="Panel" />
+					</ListItemButton>
 
-					<ListItem>
-						<ListItemButton
-							component={NavLink}
-							sx={{ textTransform: "none" }}
-							
-							to="/compra"
-						>
-							<ListItemText primary="Compra AXN" />
-						</ListItemButton>
-					</ListItem>
+					<ListItemButton
+						onClick={handleClickList}
+						sx={{ textTransform: "none" }}
+						selected={(location.pathname === '/compra' || location.pathname === '/recibe' || location.pathname === '/swap' || location.pathname === '/envia' || location.pathname === '/retira')}
+					>
+						<ListItemText primary="Compra AXN" />
+						{openList ? <ExpandLess /> : <ExpandMore />}
+					</ListItemButton>
+					<Collapse in={openList} timeout="auto" unmountOnExit>
+						<List component="div" disablePadding>
+							<ListItemButton
+								component={NavLink}
+								sx={{ textTransform: "none", pl: 4 }}
+								selected={location.pathname === '/compra'}
+								to="/compra"
+							>
+								<ListItemText primary="Compra" />
+							</ListItemButton>
 
-					<ListItem>
-						<ListItemButton
-							component={NavLink}
-							sx={{ textTransform: "none" }}
-							
-							to="/cuenta"
-						>
-							<ListItemText primary="Cuenta" />
-						</ListItemButton>
-					</ListItem>
+							<ListItemButton
+								component={NavLink}
+								sx={{ textTransform: "none", pl: 4 }}
+								selected={location.pathname === '/recibe'}
+								to="/recibe"
+							>
+								<ListItemText primary="Recibe" />
+							</ListItemButton>
 
-					<ListItem>
-						<ListItemButton
-							component={NavLink}
-							sx={{ textTransform: "none" }}
-							
-							to="/calculadora"
-						>
-							<ListItemText primary="Calculadora" />
-						</ListItemButton>
-					</ListItem>
+							<ListItemButton
+								component={NavLink}
+								sx={{ textTransform: "none", pl: 4 }}
+								selected={location.pathname === '/swap'}
+								to="/swap"
+							>
+								<ListItemText primary="Swap" />
+							</ListItemButton>
 
-					<ListItem>
-						<ListItemButton
-							className="button-navigation"
-							onClick={() => window.open('https://docs.axencoin.finance/', '_blank', 'noopener,noreferrer')}
-						>
-							<ListItemText primary="Documentos" />
-						</ListItemButton>
-					</ListItem>
+							<ListItemButton
+								component={NavLink}
+								sx={{ textTransform: "none", pl: 4 }}
+								selected={location.pathname === '/envia'}
+								to="/envia"
+							>
+								<ListItemText primary="Envia" />
+							</ListItemButton>
+
+							<ListItemButton
+								component={NavLink}
+								sx={{ textTransform: "none", pl: 4 }}
+								selected={location.pathname === '/retira'}
+								to="/retira"
+							>
+								<ListItemText primary="Retira" />
+							</ListItemButton>
+						</List>
+					</Collapse>
+
+					<ListItemButton
+						component={NavLink}
+						sx={{ textTransform: "none" }}
+						selected={location.pathname === '/cuenta'}
+						to="/cuenta"
+					>
+						<ListItemText primary="Cuenta" />
+					</ListItemButton>
+
+					<ListItemButton
+						component={NavLink}
+						sx={{ textTransform: "none" }}
+						selected={location.pathname === '/calculadora'}
+						to="/calculadora"
+					>
+						<ListItemText primary="Calculadora" />
+					</ListItemButton>
+
+					<ListItemButton
+						className="button-navigation"
+						onClick={() => window.open('https://docs.axencoin.finance/', '_blank', 'noopener,noreferrer')}
+					>
+						<ListItemText primary="Documentos" />
+					</ListItemButton>
 				</List>
 			</Drawer>
 

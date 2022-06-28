@@ -63,7 +63,7 @@ export const Panel = () => {
                 </Grid>
 
                 <Grid container justifyContent={'center'}>
-                    <Grid xs={10} md={4}>
+                    <Grid item xs={10} md={4}>
                         <div className='data-container'>
                             <div className='data-regular'>
                                 <div className='next-row-text'>Total Rewards Distr.</div>

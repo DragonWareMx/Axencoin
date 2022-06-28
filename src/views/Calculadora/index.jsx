@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import './css.css';
 import Grid from '@mui/material/Grid';
 import Caja from './assets/Caja-maximo-crop.png'
@@ -8,7 +8,10 @@ import TextField from '@mui/material/TextField';
 import { styled } from '@mui/material/styles';
 import FormControl from '@mui/material/FormControl';
 import Slider from '@mui/material/Slider';
-import { Typography } from '@mui/material';
+import { Tooltip, Typography } from '@mui/material';
+
+const interes = 0.003553496471
+const precioAXN = 1
 
 const CssTextField = styled(TextField)(({ theme }) => ({
     'label + &': {
@@ -51,9 +54,23 @@ export const Calculadora = () => {
         days: 30
     });
 
+    const totalAXNRef = useRef(null)
+
     const handleChange = (prop) => (event) => {
         setValues({ ...values, [prop]: event.target.value });
     };
+
+    //calculo
+    const [maxAXN, setMaxAXN] = useState(null)
+    const [earnings, setEarnings] = useState("0.000")
+    const [potentianReturn, setPotentianReturn] = useState("0.000")
+
+    React.useEffect(() => {
+        const newEarnings = values.amount * Math.pow((precioAXN + interes), values.days)
+        setEarnings(newEarnings.toLocaleString('es-MX', { minimumFractionDigits: 3 }))
+        setPotentianReturn((parseFloat(newEarnings) - parseFloat(precioAXN * values.amount)).toLocaleString('es-MX', { minimumFractionDigits: 3 }))
+    }, [values, earnings, potentianReturn])
+    
 
     return (
         <>
@@ -65,7 +82,7 @@ export const Calculadora = () => {
                             <Grid item xs={12} >
                                 <div className='little-info-container '>
                                     <div className="info-title">Precio AXN</div>
-                                    <div className="info-quantity">$ 1</div>
+                                    <div className="info-quantity">$ {precioAXN}</div>
                                     <div className='info-divider-gradient'></div>
                                 </div>
                             </Grid>
@@ -79,7 +96,7 @@ export const Calculadora = () => {
                             <Grid item xs={12}>
                                 <div className='little-info-container '>
                                     <div className="info-title">Tu Balance AXN</div>
-                                    <div className="info-quantity" id="totalAXN">0 AXN</div>
+                                    <div className="info-quantity" id="totalAXN" ref={totalAXNRef}>0 AXN</div>
                                     <div className='info-divider-gradient'></div>
                                 </div>
                             </Grid>
@@ -105,7 +122,20 @@ export const Calculadora = () => {
                                                     value={values.amount}
                                                     onChange={handleChange('amount')}
                                                     InputProps={{
-                                                        endAdornment: <InputAdornment position="end">Máximo</InputAdornment>,
+                                                        endAdornment: 
+                                                        <Tooltip title={maxAXN !== null ? "Tu máximo es " + maxAXN : ""} placement="right" >
+                                                            <InputAdornment
+                                                                position="end"
+                                                                style={{ cursor: "pointer" }}
+                                                                onClick={(e) => {
+                                                                    const totalAXN = totalAXNRef.current?.innerHTML
+                                                                    setMaxAXN(parseFloat(totalAXN))
+                                                                    setValues({...values, amount: parseFloat(totalAXN)})
+                                                                }}
+                                                            >
+                                                                Máximo
+                                                            </InputAdornment>
+                                                        </Tooltip>,
                                                         disableUnderline: true,
                                                     }}
                                                 />
@@ -208,7 +238,7 @@ export const Calculadora = () => {
                                             sm: 'center'
                                         }}}
                                     >
-                                        $0.000
+                                        ${parseFloat(precioAXN * values.amount).toLocaleString('es-MX', { minimumFractionDigits: 3 })}
                                     </Typography>
                                 </Grid>
                             </Grid>
@@ -276,7 +306,7 @@ export const Calculadora = () => {
                                             sm: 'center'
                                         }}}
                                     >
-                                        0.000 AXN
+                                        {earnings} AXN
                                     </Typography>
                                 </Grid>
                             </Grid>
@@ -311,7 +341,7 @@ export const Calculadora = () => {
                                             sm: 'center'
                                         }}}
                                     >
-                                        $0.000
+                                        ${(potentianReturn).toLocaleString('es-MX', { minimumFractionDigits: 3 })}
                                     </Typography>
                                 </Grid>
                             </Grid>

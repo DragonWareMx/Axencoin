@@ -62,12 +62,12 @@ export const Send = () => {
                             <Grid item style={{fontSize:'22px'}}>SEND $AXN</Grid>
                             <Grid item>
                                 <Grid container>
-                                    <div onClick={()=>alert('reset')} className='buy-options'>
+                                    {/* <div onClick={()=>alert('reset')} className='buy-options'>
                                         <RestartAltIcon/>
                                     </div>
                                     <div onClick={()=>alert('settings')} className='buy-options'>
                                         <SettingsIcon/>
-                                    </div>
+                                    </div> */}
                                 </Grid>
                             </Grid>
                         </Grid>

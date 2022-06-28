@@ -45,7 +45,7 @@
 
 
 .logo-header {
-    width: 200px;
+    width: 100%;
 }
 
 .nav-links-container a {
@@ -67,7 +67,7 @@
     font-weight: 500 !important;
     font-size: 16px !important;
     text-decoration: none !important;
-    color: white !important;
+    color: black !important;
 }
 
 .text-truncate {

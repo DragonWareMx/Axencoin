@@ -8,7 +8,7 @@ import TextField from '@mui/material/TextField';
 import { styled } from '@mui/material/styles';
 import FormControl from '@mui/material/FormControl';
 import Slider from '@mui/material/Slider';
-import { Tooltip, Typography } from '@mui/material';
+import { Tooltip, Typography, Alert } from '@mui/material';
 
 const interes = 0.003553496471
 const precioAXN = 1
@@ -57,6 +57,7 @@ export const Calculadora = () => {
     const totalAXNRef = useRef(null)
 
     const handleChange = (prop) => (event) => {
+        
         setValues({ ...values, [prop]: event.target.value });
     };
 
@@ -66,9 +67,9 @@ export const Calculadora = () => {
     const [potentianReturn, setPotentianReturn] = useState("0.000")
 
     React.useEffect(() => {
-        const newEarnings = values.amount * Math.pow((precioAXN + interes), values.days)
+        const newEarnings = parseFloat(values.amount) + values.amount * Math.pow((precioAXN + interes), values.days)
         setEarnings(newEarnings.toLocaleString('es-MX', { minimumFractionDigits: 3 }))
-        setPotentianReturn((parseFloat(newEarnings) - parseFloat(precioAXN * values.amount)).toLocaleString('es-MX', { minimumFractionDigits: 3 }))
+        setPotentianReturn((parseFloat(newEarnings) - parseFloat(newEarnings * 0.05)).toLocaleString('es-MX', { minimumFractionDigits: 3 }))
     }, [values, earnings, potentianReturn])
     
 
@@ -105,6 +106,11 @@ export const Calculadora = () => {
                     {/* right column */}
                     <Grid item xs={12} md={8}>
                         <Grid container spacing={{ xs: 2, md: 2 }}>
+                            {values.amount < 100 && 
+                                <Alert sx={{ background: "rgb(0,0,0,0.5)", color: "white", mt: 2 }} severity="info">
+                                    Te recordamos que en cantidades menores a 100 no se activa el motor de recompensas.
+                                </Alert>
+                            }
                             <Grid item xs={12} md={6}>
                                 <Grid container spacing={2} className={'input-container'}>
                                     <Grid item xs={12} md={4} className={'input-text'}>
@@ -121,6 +127,7 @@ export const Calculadora = () => {
                                                     id="outlined-start-adornment"
                                                     value={values.amount}
                                                     onChange={handleChange('amount')}
+                                                    min={100}
                                                     InputProps={{
                                                         endAdornment: 
                                                         <Tooltip title={maxAXN !== null ? "Tu máximo es " + maxAXN : ""} placement="right" >

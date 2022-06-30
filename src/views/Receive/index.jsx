@@ -92,7 +92,7 @@ export const Receive = () => {
                             direction='row'
                             className='buy-slipText'
                         >
-                            <div>SHARE YOUR QR TO RECEIVE AXN</div>
+                            <div style={{marginBottom: 10}}>SHARE YOUR QR TO RECEIVE AXN</div>
                         </Grid>
                         {/* <Grid container justifyContent={'center'}> */}
                             <Grid container justifyContent={'center'}>
@@ -112,13 +112,12 @@ export const Receive = () => {
 
                                 </div>
 
-                                <div id="qrcode"></div>
+                                <div id="qrcode" style={{width: '100%'}}></div>
 
                                 <p>
-                                    <br/><br/>
                                     <a id="downloader" download="images/qr.png" className="hidden">
-                                        <br></br>
-                                        <BuyButton type="button" variant='contained' id="btn-download" className='buy-button'>
+                                        
+                                        <BuyButton type="button" variant='contained' id="btn-download" className='receive-button'>
                                             DOWNLOAD
                                         </BuyButton>
                                     </a>

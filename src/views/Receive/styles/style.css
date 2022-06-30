@@ -34,9 +34,9 @@
     padding: 0 10px;
 }
 
-.buy-button{
+.receive-button{
     width: 200px;
-    margin-top: 80px !important;
+    margin-top: 10px !important;
 }
 
 @media(max-width:500px){

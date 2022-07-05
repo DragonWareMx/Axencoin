@@ -69,7 +69,7 @@ export const Calculadora = () => {
     React.useEffect(() => {
         const newEarnings = values.amount * Math.pow((precioAXN + interes), values.days)
         setEarnings(newEarnings.toLocaleString('es-MX', { minimumFractionDigits: 3 }))
-        setPotentianReturn((parseFloat(newEarnings) - parseFloat(precioAXN * values.amount)).toLocaleString('es-MX', { minimumFractionDigits: 3 }))
+        setPotentianReturn((parseFloat(newEarnings) * 0.95).toLocaleString('es-MX', { minimumFractionDigits: 3 }))
     }, [values, earnings, potentianReturn])
     
 

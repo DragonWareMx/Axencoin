@@ -10,7 +10,7 @@ import FormControl from '@mui/material/FormControl';
 import Slider from '@mui/material/Slider';
 import { Tooltip, Typography, Alert } from '@mui/material';
 
-const interes = 0.003553496471
+const interes = 0.004219472133
 const precioAXN = 1
 
 const CssTextField = styled(TextField)(({ theme }) => ({
@@ -67,9 +67,9 @@ export const Calculadora = () => {
     const [potentianReturn, setPotentianReturn] = useState("0.000")
 
     React.useEffect(() => {
-        const newEarnings = parseFloat(values.amount) + values.amount * Math.pow((precioAXN + interes), values.days)
+        const newEarnings = values.amount * Math.pow((precioAXN + interes), values.days)
         setEarnings(newEarnings.toLocaleString('es-MX', { minimumFractionDigits: 3 }))
-        setPotentianReturn((parseFloat(newEarnings) - parseFloat(newEarnings * 0.05)).toLocaleString('es-MX', { minimumFractionDigits: 3 }))
+        setPotentianReturn((parseFloat(newEarnings) - parseFloat(precioAXN * values.amount)).toLocaleString('es-MX', { minimumFractionDigits: 3 }))
     }, [values, earnings, potentianReturn])
     
 

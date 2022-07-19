@@ -72,25 +72,6 @@ let ABI = [
 		"inputs": [
 			{
 				"indexed": true,
-				"internalType": "uint256",
-				"name": "newValue",
-				"type": "uint256"
-			},
-			{
-				"indexed": true,
-				"internalType": "uint256",
-				"name": "oldValue",
-				"type": "uint256"
-			}
-		],
-		"name": "GasForProcessingUpdated",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
 				"internalType": "address",
 				"name": "previousOwner",
 				"type": "address"
@@ -423,6 +404,19 @@ let ABI = [
 	{
 		"inputs": [
 			{
+				"internalType": "address[]",
+				"name": "_holders",
+				"type": "address[]"
+			}
+		],
+		"name": "claimRewardsArray",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
 				"internalType": "uint256",
 				"name": "_claim",
 				"type": "uint256"
@@ -578,19 +572,6 @@ let ABI = [
 		"type": "function"
 	},
 	{
-		"inputs": [],
-		"name": "gasForProcessing",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
 		"inputs": [
 			{
 				"internalType": "address",
@@ -728,8 +709,46 @@ let ABI = [
 		"type": "function"
 	},
 	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_holder",
+				"type": "address"
+			}
+		],
+		"name": "getLastClaimRewardTime",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
 		"inputs": [],
 		"name": "getLastProcessedIndex",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_holder",
+				"type": "address"
+			}
+		],
+		"name": "getNumClaimDays",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -756,6 +775,38 @@ let ABI = [
 	{
 		"inputs": [],
 		"name": "getRewardInterval",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			}
+		],
+		"name": "getRewardsPendingOf",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getTotalRewardsCreated",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -920,6 +971,25 @@ let ABI = [
 		"type": "function"
 	},
 	{
+		"inputs": [
+			{
+				"internalType": "address[]",
+				"name": "_holders",
+				"type": "address[]"
+			}
+		],
+		"name": "migrateTokenArray",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
 		"inputs": [],
 		"name": "multipleForSwap",
 		"outputs": [
@@ -940,6 +1010,19 @@ let ABI = [
 				"internalType": "string",
 				"name": "",
 				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "numDayRewarded",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",
@@ -995,19 +1078,6 @@ let ABI = [
 			}
 		],
 		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "gas",
-				"type": "uint256"
-			}
-		],
-		"name": "processRewardTracker",
-		"outputs": [],
-		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -1083,6 +1153,13 @@ let ABI = [
 	},
 	{
 		"inputs": [],
+		"name": "sendAndLiquify",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
 		"name": "sendAndLiquifyEnabled",
 		"outputs": [
 			{
@@ -1127,6 +1204,37 @@ let ABI = [
 			}
 		],
 		"name": "setAutomatedMarketMakerPair",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address[]",
+				"name": "_holders",
+				"type": "address[]"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_date",
+				"type": "uint256"
+			}
+		],
+		"name": "setBuyTimeOf",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_date",
+				"type": "uint256"
+			}
+		],
+		"name": "setLastSentToContract",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -1439,12 +1547,12 @@ let ABI = [
 	{
 		"inputs": [
 			{
-				"internalType": "uint256",
-				"name": "newValue",
-				"type": "uint256"
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
 			}
 		],
-		"name": "updateGasForProcessing",
+		"name": "updateGenBalance",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"

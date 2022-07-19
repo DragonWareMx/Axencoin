@@ -3,7 +3,7 @@ let metamaskOK=false;
 let chainIdX=false;//alert(chainId);
 let web3OK=false;
 checkMobile();
-let coinAddress = '0xf6ada314f60972208f4d09c2b0af65bd26f35c27';//0xC5f1776F276c88b98B84D4c54f37724d4A8F2ea2
+let coinAddress = '0x59a07b8e4d9273473e5ffbb8ebd22a5221055370';//0xC5f1776F276c88b98B84D4c54f37724d4A8F2ea2
 let USDT = '0x55d398326f99059fF775485246999027B3197955';
 let oldAddress = '0x04dcc0b0CA187c4b1784f6F7607F21c2afb59894';
 
@@ -292,63 +292,30 @@ async function temporizador(){
 async function calculateReward(){
 	
 		
-contractCoin.methods.getAccountRewardsInfo(account).call(function(err, result){ if(err)console.log(err); else { 
-	let boh = web3.utils.fromWei( result[4], 'ether');
-	//jQuery('h2:contains("TOTAL REWARDS RECEIVED")').html('TOTAL REWARDS RECEIVED: '+boh+' BNB');
-	jQuery('#tokenReward').html((Number(boh)).toLocaleString(undefined, { minimumFractionDigits: 5 })+' AXN');
-	 if(Number(result[5]>0)){
-	jQuery('#earningArea ').removeClass('hidden');
-	 let nDate=new Date(result[5]*1000).toGMTString(); jQuery('#lastReceived').html(nDate); 
-	 nDate=new Date(result[6]*1000).toGMTString(); jQuery('span:contains("next date dividend received")').html('next date dividend received: '+ nDate); 
-	 
-	 jQuery('#lastReceivedNum').html(result[7]); 
-	 
-	 }
-	 
-	 
-
-
-	}
-	});
-
-/*	contractCoin.methods.claimCalculateOwnerReward(account).call(function(err, result){ if(err)console.log(err); else {
-		if(Number(result)>0){
-			console.log('BNB REWARD: '+result)
-			jQuery('.rewardDiv').removeClass('hidden');
-			rewards = web3.utils.fromWei(result, 'ether')+' BNB';
-			//jQuery('#tokenReward').html('Staked Tokens:'+ (totBalToken / decimals)+' <br>Token Reward: '+ Number(result / decimals).toLocaleString()+' BNB');
-		//	jQuery('#tokenReward').html(rewards+' BNB');
+	contractCoin.methods.getAccountRewardsInfo(account).call(function(err, result){ if(err)console.log(err); else { 
+		let boh = web3.utils.fromWei( result[4], 'ether');
+		jQuery('#tokenReward').html((Number(boh)).toLocaleString(undefined, { minimumFractionDigits: 5 })+' AXN');
+		 if(Number(result[5]>0)){
+		jQuery('#earningArea ').removeClass('hidden');
+		 let nDate=new Date(result[5]*1000).toGMTString(); jQuery('#lastReceived').html(nDate); 
+		 nDate=new Date(result[6]*1000).toGMTString(); jQuery('span:contains("next date dividend received")').html('next date dividend received: '+ nDate); 
+		 
+		 jQuery('#lastReceivedNum').html(result[7]); 
+		 
+		 }
+		}
+		});
+		
+				
+		contractCoin.methods.getRewardsPendingOf(account).call(function(err, result){ if(err)console.log(err); else { 
+			let boh = web3.utils.fromWei( result, 'ether');
+			jQuery('#rewardsPending').html((Number(boh)).toLocaleString(undefined, { minimumFractionDigits: 5 })+' AXN');
+		}});
 			
-jQuery('#totalAXN ').html((Math.round( totBalToken / decimals * 1000) / 1000).toLocaleString(undefined, { minimumFractionDigits: 0 })+'');
-			}
-		}; });
+}
+		
+
 	
-	contractCoin.methods.claimCalculateRewardFraction(account).call(function(err, result){ if(err)console.log(err); else {
-		if(Number(result)>0){
-			console.log('BNB REWARD 15 MIN: '+result)
-			jQuery('.rewardDiv').removeClass('hidden');
-		let	rewards2 = web3.utils.fromWei(result, 'ether')+'';
-			//jQuery('#tokenReward').html('Staked Tokens:'+ (totBalToken / decimals)+' <br>Token Reward: '+ Number(result / decimals).toLocaleString()+' BNB');
-			jQuery('#tokenReward').html(Number(rewards2).toLocaleString(undefined, { minimumFractionDigits: 2 })+' BNB');
-			
-jQuery('#totalAXN ').html((Math.round( totBalToken / decimals * 1000) / 1000).toLocaleString(undefined, { minimumFractionDigits: 0 })+'');
-			}
-		}; });	
-		
-		contractCoin.methods.getReferralRewards(account).call(function(err1, result1){ if(err1)console.log(err1); else {
-			let boh = Number(web3.utils.fromWei(result1, 'ether')).toFixed(2);
-			console.log('referral rewards: '+result1);
-			jQuery('#referralReward').html(Number(boh).toLocaleString(undefined, { minimumFractionDigits: 2 })+' BNB');
-			
-		}; });
-		
-		contractCoin.methods.getEarnedBNB(account).call(function(err, result3){ if(err)console.log(err); else {
-			let boh = Number(web3.utils.fromWei(result3, 'ether')).toFixed(2);
-			jQuery("#earned").html(Number(boh).toLocaleString(undefined, { minimumFractionDigits: 2 })+' BNB');
-						
-		}; });
-		*/
-	}
 	
 	
 jQuery(document).on('click', '#claimBtnAll', function(e) {

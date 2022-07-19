@@ -1,109 +1,128 @@
-import React from 'react';
-import './css.css';
-import Grid from '@mui/material/Grid';
-import CardLeft from './assets/BotonComprarAhora.png'
-import CardRight from './assets/BotonLeermas.png'
-import { Container } from '@mui/system';
-
+import React from "react";
+import "./css.css";
+import Grid from "@mui/material/Grid";
+import CardLeft from "./assets/BotonComprarAhora.png";
+import CardRight from "./assets/BotonLeermas.png";
+import { Container } from "@mui/system";
+import { Button } from "@mui/material";
 
 export const Panel = () => {
-    return (
-        <>
-            <Container fixed>
-                <Grid container spacing={{ xs: 2, md: 3 }} justifyContent="center">
+  return (
+    <>
+      <Container fixed>
+        <Grid container spacing={{ xs: 2, md: 3 }} justifyContent="center">
+          <Grid item xs={10} md={4}>
+            <div className="data-container">
+              <img src={CardLeft} alt="" srcSet="" className="data-img" />
+              <div className="data-irregular">
+                <div>AXN Price</div>
+                <div className="data-bold">$1 stabled</div>
+              </div>
+            </div>
 
-                    <Grid item xs={10} md={4}>
-                        <div className='data-container'>
-                            <img src={CardLeft} alt="" srcSet="" className='data-img'/>
-                            <div className='data-irregular'>
-                                <div>AXN Price</div>
-                                <div className='data-bold'>$1 stabled</div>
-                            </div>
-                        </div>
-                        
-                        {/* <div className='little-info-container'>
+            {/* <div className='little-info-container'>
                             <div>Backed Liquidity</div>
                             <div>100%</div>
                             <div className='custom-divider-gradient'></div>
                         </div> */}
-                    </Grid>
+          </Grid>
 
-                    <Grid item xs={10} md={4}>
-                        <div className='data-container auxiliar-margin-bottom'>
-                            <div className='data-regular'>
-                                <div>Contract Balance</div>
-                                <div className='data-bold contractbalance'>0 USDT</div>
-                            </div>
-                            <div className='custom-divider'></div>
-                        </div>
-                        
-                        {/* <div className='little-info-container extra-margin-top'>
+          <Grid item xs={10} md={4}>
+            <div className="data-container auxiliar-margin-bottom">
+              <div className="data-regular">
+                <div>Contract Balance</div>
+                <div className="data-bold contractbalance">0 USDT</div>
+              </div>
+              <div className="custom-divider"></div>
+            </div>
+
+            {/* <div className='little-info-container extra-margin-top'>
                             <div>Next Rebase</div>
                             <div>00:04:16</div>
                             <div className='custom-divider-gradient'></div>
                         </div> */}
-                    </Grid>
+          </Grid>
 
-                    <Grid item xs={10} md={4}>
-                        <div className='data-container'>
-                            <img src={CardRight} alt="" srcSet="" className='data-img'/>
-                            <div className='data-irregular'>
-                                <div>Total Supply</div>
-                                <div className='data-bold totalSupply'>0 AXN</div>
-                            </div>
-                        </div>
-                        
-                        {/* <div className='little-info-container'>
+          <Grid item xs={10} md={4}>
+            <div className="data-container">
+              <img src={CardRight} alt="" srcSet="" className="data-img" />
+              <div className="data-irregular">
+                <div>Total Supply</div>
+                <div className="data-bold totalSupply">0 AXN</div>
+              </div>
+            </div>
+
+            {/* <div className='little-info-container'>
                             <div>Total Supply</div>
                             <div>4,058,958.910</div>
                             <div className='custom-divider-gradient'></div>
                         </div> */}
-                    </Grid>
+          </Grid>
+        </Grid>
 
-                </Grid>
+        <Grid container justifyContent={"center"}>
+          <Grid item xs={10} md={4}>
+            <div className="data-container">
+              <div className="data-regular">
+                <div className="next-row-text">Total Rewards Distr.</div>
+                <div
+                  className="data-bold totRewards"
+                  style={{ fontSize: "18px" }}
+                >
+                  0 AXN
+                </div>
+              </div>
+              <div className="custom-divider"></div>
+            </div>
+          </Grid>
+        </Grid>
 
-                <Grid container justifyContent={'center'}>
-                    <Grid item xs={10} md={4}>
-                        <div className='data-container'>
-                            <div className='data-regular'>
-                                <div className='next-row-text'>Total Rewards Distr.</div>
-                                <div className='data-bold totRewards' style={{fontSize:'18px'}}>0 AXN</div>
-                            </div>
-                            <div className='custom-divider'></div>
-                        </div>
-                    </Grid>
-                </Grid>
+        <Grid
+          container
+          alignItems="center"
+          className="auxiliar-margin-top auxiliar-margin-bottom"
+        >
+          <Grid item xs={12} md={4}>
+            <div className="little-info-container">
+              <div>Daily Auto Compound</div>
+              <div>0.355%</div>
+              <div className="custom-divider-gradient"></div>
+            </div>
+          </Grid>
 
-                <Grid container alignItems='center' className='auxiliar-margin-top auxiliar-margin-bottom'>
+          <Grid item xs={12} md={4}>
+            <div className="little-info-container">
+              <div>APY</div>
+              <div>365%</div>
+              <div className="custom-divider-gradient"></div>
+            </div>
+          </Grid>
 
-                    <Grid item xs={12} md={4}>
-                        <div className='little-info-container'>
-                            <div>Daily Auto Compound</div>
-                            <div>0.355%</div>
-                            <div className='custom-divider-gradient'></div>
-                        </div>
-                    </Grid>
+          <Grid item xs={12} md={4}>
+            <div className="little-info-container">
+              <div>Dev Mktg Fee</div>
+              <div>5%</div>
+              <div className="custom-divider-gradient"></div>
+            </div>
+          </Grid>
+        </Grid>
 
-                    <Grid item xs={12} md={4}>
-                        <div className='little-info-container'>
-                            <div>APY</div>
-                            <div>365%</div>
-                            <div className='custom-divider-gradient'></div>
-                        </div>
-                    </Grid>
+        <Grid
+          container
+          alignItems="center"
+          className="auxiliar-margin-top auxiliar-margin-bottom"
+        >
+          <Grid item xs={12} md={4}>
+            <div className="little-info-container">
+              <div>Recompensas</div>
+              <div id="rewardsPending">0.00000 AXN</div>
+              <Button id="claimRewards">Canjear</Button>
+              <div className="custom-divider-gradient"></div>
+            </div>
+          </Grid>
+        </Grid>
 
-                    <Grid item xs={12} md={4}>
-                        <div className='little-info-container'>
-                            <div>Dev Mktg Fee</div>
-                            <div>5%</div>
-                            <div className='custom-divider-gradient'></div>
-                        </div>
-                    </Grid>
-
-                </Grid>
-
-
-                {/* <Grid container spacing={{ xs: 2, md: 3 }} justifyContent="center">
+        {/* <Grid container spacing={{ xs: 2, md: 3 }} justifyContent="center">
 
                     <Grid item xs={10} md={4}>
                         <div className='data-container'>
@@ -148,7 +167,7 @@ export const Panel = () => {
                     </Grid>
 
                 </Grid> */}
-            </Container>
-        </>
-    )
-}
+      </Container>
+    </>
+  );
+};

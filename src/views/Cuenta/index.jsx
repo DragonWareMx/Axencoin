@@ -4,6 +4,7 @@ import CardLeft from "../Panel/assets/BotonComprarAhora.png";
 import CardRight from "../Panel/assets/BotonLeermas.png";
 import "../Panel/css.css";
 import "./css.css";
+import { Button } from "@mui/material";
 
 export const Cuenta = () => {
   return (
@@ -192,6 +193,21 @@ export const Cuenta = () => {
             >
               0
             </Typography>
+          </Grid>
+        </Grid>
+
+        <Grid
+          container
+          alignItems="center"
+          className="auxiliar-margin-top auxiliar-margin-bottom"
+        >
+          <Grid item xs={12} md={4}>
+            <div className="little-info-container">
+              <div>Recompensas</div>
+              <div id="rewardsPending">0.00000 AXN</div>
+              <Button id="claimRewards">Canjear</Button>
+              <div className="custom-divider-gradient"></div>
+            </div>
           </Grid>
         </Grid>
 

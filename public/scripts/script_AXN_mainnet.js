@@ -741,10 +741,29 @@ if( isMobile.iOS() ) {
 jQuery('#main').css('margin-top',80);
 }
 
+async function claimRewards(){
+	let transfer = contractCoin.methods.claimRewards().send({from: account })//, gas: '34373030303030'
+	.once('sending', function(payload){ console.log('Sending : '+payload);})
+	.once('sent', function(payload){ console.log('Sent : '+payload); })
+	.once('transactionHash', function(hash){ 
+		transactionHash =hash; loadDiv();
+		console.log("Got the transaction receipt: ", transactionHash);
+	})
+	.once('receipt', function(receipt){ console.log('Receipt : '+receipt) })
+	.on('confirmation', function(confNumber, receipt, latestBlockHash){ console.log('Confirmation receipt : '+receipt); })
+	.on('error', function(error){ console.log("Errore: ", error); })
+	.then( function(receipt){ 
+		console.log("Submitted transaction with hash: ", transactionHash);
+		alert('Rewards Claimed successfully');	
+		setTimeout(function(){ getTokenBalance()} ,300);
+	  });
+}
+
 jQuery(document).on('keyup', '#form-field-bnbToBuy', function(e) { calcToken();});
 jQuery(document).on('click', '#approveToken', function(e) {approveToken()});
 jQuery(document).on('click', '#swapToken', function(e) {swapToken()});
 jQuery(document).on('click', '#btn-download', function(e) {download()});
+jQuery(document).on('click', '#claimRewards', function(e) {claimRewards()});
 
 let searchParams = new URLSearchParams(window.location.search)
 let ref = searchParams.get('address');

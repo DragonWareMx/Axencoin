@@ -60,7 +60,7 @@ export const Swap = () => {
                             alignItems="center"
                             direction='row'
                         >
-                            <Grid item style={{fontSize:'22px'}}>SWAP YOUR OLD to $AXN</Grid>
+                            <Grid item style={{fontSize:'22px'}}>ACTUALIZA TUS $AXN</Grid>
                             <Grid item>
                                 <Grid container>
                                     {/* <div onClick={()=>alert('reset')} className='buy-options'>
@@ -72,7 +72,7 @@ export const Swap = () => {
                                 </Grid>
                             </Grid>
                         </Grid>
-                        <Grid item style={{textAlign:'left',fontSize:'12px',fontWeight:300}}>FAST, SECURE, KYC-FREE</Grid>
+                        <Grid item style={{textAlign:'left',fontSize:'12px',fontWeight:300}}>RÁPIDO Y SEGURO</Grid>
                         <Grid 
                             container
                             justifyContent="center" 
@@ -94,11 +94,11 @@ export const Swap = () => {
                         </Grid>
 
                         <BuyButton variant='contained' className='buy-button hidden' id="swapToken" style={{backgroundColor:'#020a30'}}>
-                            SWAP TOKENS
+                            ACTUALIZA LOS TOKENS
                         </BuyButton>
 
                         <BuyButton variant='contained' className='buy-button' id="approveToken" style={{backgroundColor:'#020a30'}}>
-                            APPROVE TOKENS
+                            APRUEBA LOS TOKENS
                         </BuyButton>
                         
                         <Alert sx={{ background: "rgb(0,0,0,0.5)", color: "white", mt: 2 }} severity="info">

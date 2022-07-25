@@ -15,8 +15,8 @@ export const Panel = () => {
             <div className="data-container">
               <img src={CardLeft} alt="" srcSet="" className="data-img" />
               <div className="data-irregular">
-                <div>AXN Price</div>
-                <div className="data-bold">$1 stabled</div>
+                <div>Precio AXN</div>
+                <div className="data-bold">$1</div>
               </div>
             </div>
 
@@ -30,7 +30,7 @@ export const Panel = () => {
           <Grid item xs={10} md={4}>
             <div className="data-container auxiliar-margin-bottom">
               <div className="data-regular">
-                <div>Contract Balance</div>
+                <div>Balance en contrato</div>
                 <div className="data-bold contractbalance">0 USDT</div>
               </div>
               <div className="custom-divider"></div>
@@ -47,7 +47,7 @@ export const Panel = () => {
             <div className="data-container">
               <img src={CardRight} alt="" srcSet="" className="data-img" />
               <div className="data-irregular">
-                <div>Total Supply</div>
+                <div>Suministro total</div>
                 <div className="data-bold totalSupply">0 AXN</div>
               </div>
             </div>
@@ -64,7 +64,7 @@ export const Panel = () => {
           <Grid item xs={10} md={4}>
             <div className="data-container">
               <div className="data-regular">
-                <div className="next-row-text">Total Rewards Distr.</div>
+                <div className="next-row-text">Total de recompensas distribuidas</div>
                 <div
                   className="data-bold totRewards"
                   style={{ fontSize: "18px" }}
@@ -84,7 +84,7 @@ export const Panel = () => {
         >
           <Grid item xs={12} md={4}>
             <div className="little-info-container">
-              <div>Daily Auto Compound</div>
+              <div>Interés diario</div>
               <div>0.355%</div>
               <div className="custom-divider-gradient"></div>
             </div>
@@ -100,7 +100,7 @@ export const Panel = () => {
 
           <Grid item xs={12} md={4}>
             <div className="little-info-container">
-              <div>Dev Mktg Fee</div>
+              <div>Comisión entrada-salida</div>
               <div>5%</div>
               <div className="custom-divider-gradient"></div>
             </div>

@@ -19,7 +19,7 @@ export const Cuenta = () => {
           <div className="data-container">
             <img src={CardLeft} alt="" srcSet="" className="data-img" />
             <div className="data-irregular">
-              <div>Your Balance</div>
+              <div>Tu balance</div>
               <div className="data-bold" id="totalAXN">
                 $0.000
               </div>
@@ -85,7 +85,7 @@ export const Cuenta = () => {
         >
           <Grid item container xs={10} sm={8} style={{ position: "relative" }}>
             <Typography variant="h6" className="font-style" align="left">
-              Current AXN Price
+              Precio AXN
             </Typography>
             <div className="polygon-standard-cuenta">AXEN</div>
           </Grid>
@@ -115,7 +115,7 @@ export const Cuenta = () => {
         >
           <Grid item xs={10} sm={8} style={{ position: "relative" }}>
             <Typography variant="h6" className="font-style" align="left">
-              Received Rewards
+              Recompensas recibidas
             </Typography>
             <div className="polygon-standard-cuenta">AXEN</div>
           </Grid>
@@ -146,7 +146,7 @@ export const Cuenta = () => {
         >
           <Grid item xs={10} sm={8} style={{ position: "relative" }}>
             <Typography variant="h6" className="font-style" align="left">
-              Last Day Liquified
+              Último día liquidado
             </Typography>
             <div className="polygon-big-cuenta">AXEN</div>
           </Grid>
@@ -175,7 +175,7 @@ export const Cuenta = () => {
         >
           <Grid item xs={10} sm={8} style={{ position: "relative" }}>
             <Typography variant="h6" className="font-style" align="left">
-              Num Days Received
+              Días que has recibido recompensa
             </Typography>
             <div className="polygon-standard-cuenta">AXEN</div>
           </Grid>

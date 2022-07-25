@@ -32,7 +32,7 @@ export const Home = () => {
                             <img src={CardRight} alt="" width={300} />
                             <Link to="/panel">
                                 <div className='card-irregular'>
-                                    LEER MÁS
+                                    PANEL
                                 </div>
                             </Link>
                         </div>

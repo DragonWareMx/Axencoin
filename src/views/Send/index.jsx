@@ -59,7 +59,7 @@ export const Send = () => {
                             alignItems="center"
                             direction='row'
                         >
-                            <Grid item style={{fontSize:'22px'}}>SEND $AXN</Grid>
+                            <Grid item style={{fontSize:'22px'}}>ENVIAR $AXN</Grid>
                             <Grid item>
                                 <Grid container>
                                     {/* <div onClick={()=>alert('reset')} className='buy-options'>
@@ -71,7 +71,7 @@ export const Send = () => {
                                 </Grid>
                             </Grid>
                         </Grid>
-                        <Grid item style={{textAlign:'left',fontSize:'12px',fontWeight:300}}>SHARE AXEN PROJECT</Grid>
+                        <Grid item style={{textAlign:'left',fontSize:'12px',fontWeight:300}}>COMPARTE EL PROYECTO AXNCOIN</Grid>
                         <Grid 
                             container
                             justifyContent="center" 
@@ -98,10 +98,10 @@ export const Send = () => {
                             direction='row'
                             className='buy-slipText'
                         >
-                            <div>Sending 1 $AXN is like sending 1$USD</div>
+                            <div>Enviar 1 $AXN es como enviar 1$USD</div>
                         </Grid>
                         <BuyButton variant='contained' className='buy-button' id="sendToken" style={{backgroundColor:'#020a30'}}>
-                            SEND $AXN
+                            ENVIAR $AXN
                         </BuyButton>
                     </div>
                 </Grid>

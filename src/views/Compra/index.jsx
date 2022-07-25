@@ -59,7 +59,7 @@ export const Compra = () => {
                             alignItems="center"
                             direction='row'
                         >
-                            <Grid item style={{fontSize:'22px'}}>BUY</Grid>
+                            <Grid item style={{fontSize:'22px'}}>COMPRA</Grid>
                             <Grid item>
                                 <Grid container>
                                     {/* <div onClick={()=>alert('reset')} className='buy-options'>
@@ -71,7 +71,7 @@ export const Compra = () => {
                                 </Grid>
                             </Grid>
                         </Grid>
-                        <Grid item style={{textAlign:'left',fontSize:'12px',fontWeight:300}}>FAST, SECURE, KYC-FREE</Grid>
+                        <Grid item style={{textAlign:'left',fontSize:'12px',fontWeight:300}}>RÁPIDO Y SEGURO</Grid>
                         <Grid 
                             container
                             justifyContent="center" 
@@ -79,13 +79,13 @@ export const Compra = () => {
                             <Grid item xs={11}>
                                 <BuyTextField 
                                     fullWidth 
-                                    label="Insert BNB Amount:" 
+                                    label="Cantidad en BNB:" 
                                     id="form-field-bnbToBuy" 
                                     style={{marginTop:'50px'}}
                                 />
                                 <BuyTextField 
                                     fullWidth 
-                                    label="You Will Get $AXN:" 
+                                    label="Vas a obtener en $AXN:" 
                                     className='hidden'
                                     id="tokenToBuy"
                                     style={{marginTop:'50px'}}
@@ -99,7 +99,7 @@ export const Compra = () => {
                                 <div ></div>
                             </Grid>
                         </Grid>
-                        <Grid
+                        {/* <Grid
                             container
                             justifyContent="space-between"
                             alignItems="center"
@@ -108,16 +108,16 @@ export const Compra = () => {
                         >
                             <div>Slippage tolerance</div>
                             <div>22%</div>
-                        </Grid>
+                        </Grid> */}
                         <Grid container justifyContent={'space-around'}>
                             <Tooltip title='Si aún no tienes el token AXN en tu wallet, agrégalo aquí.'>
                                 <BuyButton variant='contained' className='buy-button addToWallet' style={{backgroundColor:'#020a30'}}>
-                                    ADD $AXN TO WALLET
+                                    Agrega $AXN a tu wallet
                                 </BuyButton>
                             </Tooltip>
                             <Tooltip title='No olvides agregar el token AXN a tu wallet antes de comprar.'>
                                 <BuyButton variant='contained' className='buy-button' id="buyToken">
-                                    BUY AXENCOIN
+                                    Compra Axencoin
                                 </BuyButton>
                             </Tooltip>
                         </Grid>

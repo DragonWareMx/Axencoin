@@ -59,7 +59,7 @@ export const Receive = () => {
                             alignItems="center"
                             direction='row'
                         >
-                            <Grid item style={{fontSize:'22px'}}>RECEIVE AXENCOIN</Grid>
+                            <Grid item style={{fontSize:'22px'}}>RECIBIR AXENCOIN</Grid>
                             <Grid item>
                                 <Grid container>
                                     {/* <div onClick={()=>alert('reset')} className='buy-options'>
@@ -71,7 +71,7 @@ export const Receive = () => {
                                 </Grid>
                             </Grid>
                         </Grid>
-                        <Grid item style={{textAlign:'left',fontSize:'12px',fontWeight:300}}>FAST, SECURE, KYC-FREE</Grid>
+                        <Grid item style={{textAlign:'left',fontSize:'12px',fontWeight:300}}>RÁPIDO Y SEGURO</Grid>
                         <Grid 
                             container
                             justifyContent="center" 
@@ -92,7 +92,7 @@ export const Receive = () => {
                             direction='row'
                             className='buy-slipText'
                         >
-                            <div style={{marginBottom: 10}}>SHARE YOUR QR TO RECEIVE AXN</div>
+                            <div style={{marginBottom: 10}}>COMPARTE TU QR PARA RECIBIR AXN</div>
                         </Grid>
                         {/* <Grid container justifyContent={'center'}> */}
                             <Grid container justifyContent={'center'}>
@@ -104,7 +104,7 @@ export const Receive = () => {
                                 <input type="text" className="qr-url" placeholder="URL or Text"/>
                                 <input type="number" className="qr-size hidden" value="180" min="20" max="500"/>
 
-                                <button className="generate-qr-code">Generate</button>
+                                <button className="generate-qr-code">Generar</button>
 
                                 <br/>
 
@@ -118,7 +118,7 @@ export const Receive = () => {
                                     <a id="downloader" download="images/qr.png" className="hidden">
                                         
                                         <BuyButton type="button" variant='contained' id="btn-download" className='receive-button'>
-                                            DOWNLOAD
+                                            Descargar
                                         </BuyButton>
                                     </a>
                                 </p>

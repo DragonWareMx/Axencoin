@@ -59,7 +59,7 @@ export const Withdraw = () => {
                             alignItems="center"
                             direction='row'
                         >
-                            <Grid item style={{fontSize:'22px'}}>WITHDRAW YOUR $AXN</Grid>
+                            <Grid item style={{fontSize:'22px'}}>COBRA TUS $AXN</Grid>
                             <Grid item>
                                 <Grid container>
                                     {/* <div onClick={()=>alert('reset')} className='buy-options'>
@@ -71,7 +71,7 @@ export const Withdraw = () => {
                                 </Grid>
                             </Grid>
                         </Grid>
-                        <Grid item style={{textAlign:'left',fontSize:'12px',fontWeight:300}}>FAST, SECURE, KYC-FREE</Grid>
+                        <Grid item style={{textAlign:'left',fontSize:'12px',fontWeight:300}}>RÁPIDO Y SEGURO</Grid>
                         <Grid 
                             container
                             justifyContent="center" 
@@ -87,10 +87,10 @@ export const Withdraw = () => {
                         </Grid>
                         <Grid container justifyContent={'space-around'}>
                             <BuyButton variant='contained' className='buy-button' id="claimBtnAll" style={{backgroundColor:'#020a30'}}>
-                                WITHDRAW ALL AXENCOIN
+                                COBRA TODOS LOS AXENCOIN
                             </BuyButton>
                             <BuyButton variant='contained' id="claimBtn" className='buy-button'>
-                                WITHDRAW AXENCOIN
+                                COBRA AXENCOIN
                             </BuyButton>
                         </Grid>
                     </div>

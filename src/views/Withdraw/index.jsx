@@ -79,7 +79,7 @@ export const Withdraw = () => {
                             <Grid item xs={11}>
                                 <BuyTextField 
                                     fullWidth 
-                                    label="Insert amount to withdraw:" 
+                                    label="Inserta monto a cobrar:" 
                                     id="form-field-claim" 
                                     style={{marginTop:'50px'}}
                                 />

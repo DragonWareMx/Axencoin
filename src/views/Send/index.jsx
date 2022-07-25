@@ -79,13 +79,13 @@ export const Send = () => {
                             <Grid item xs={11}>
                                 <BuyTextField 
                                     fullWidth 
-                                    label="Insert Amount:" 
+                                    label="Inserta monto:" 
                                     id="form-field-tokenToSend" 
                                     style={{marginTop:'50px'}}
                                 />
                                 <BuyTextField 
                                     fullWidth 
-                                    label="Insert Receiver:" 
+                                    label="Inserta destinatario:" 
                                     id="receiver" 
                                     style={{marginTop:'50px'}}
                                 />

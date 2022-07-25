@@ -80,7 +80,7 @@ export const Swap = () => {
                             <Grid item xs={11}>
                                 <BuyTextField 
                                     fullWidth 
-                                    label="Quantity of Tokens:" 
+                                    label="Cantidad de Tokens:" 
                                     id="tokenToSwap" 
                                     style={{marginTop:'50px'}}
                                     InputProps={{

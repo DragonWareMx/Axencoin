@@ -79,7 +79,7 @@ export const Receive = () => {
                             <Grid item xs={11}>
                                 <BuyTextField 
                                     fullWidth 
-                                    label="Insert Amount To Receive:" 
+                                    label="Inserta monto a recibir:" 
                                     id="receive" 
                                     style={{marginTop:'50px'}}
                                 />

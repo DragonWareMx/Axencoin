@@ -205,7 +205,13 @@ export const Cuenta = () => {
             <div className="little-info-container">
               <div>Recompensas</div>
               <div id="rewardsPending">0.00000 AXN</div>
-              <Button id="claimRewards">Canjear</Button>
+              <Button
+                id="claimRewards"
+                variant="contained"
+                sx={{ mt: 1, mb: 1 }}
+              >
+                Canjear
+              </Button>
               <div className="custom-divider-gradient"></div>
             </div>
           </Grid>

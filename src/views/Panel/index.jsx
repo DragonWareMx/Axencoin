@@ -64,7 +64,9 @@ export const Panel = () => {
           <Grid item xs={10} md={4}>
             <div className="data-container">
               <div className="data-regular">
-                <div className="next-row-text">Total de recompensas distribuidas</div>
+                <div className="next-row-text">
+                  Total de recompensas distribuidas
+                </div>
                 <div
                   className="data-bold totRewards"
                   style={{ fontSize: "18px" }}
@@ -116,7 +118,13 @@ export const Panel = () => {
             <div className="little-info-container">
               <div>Recompensas</div>
               <div id="rewardsPending">0.00000 AXN</div>
-              <Button id="claimRewards">Canjear</Button>
+              <Button
+                id="claimRewards"
+                variant="contained"
+                sx={{ mt: 1, mb: 1 }}
+              >
+                Canjear
+              </Button>
               <div className="custom-divider-gradient"></div>
             </div>
           </Grid>

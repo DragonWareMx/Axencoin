@@ -356,7 +356,8 @@ jQuery(document).on('click', '#claimBtn', function(e) {
 	
 async function claimToken(){//You will claim : '+rewards+'. \nWarning: \nThe "Claim" button only works ONCE, once clicked and accepted in Metamask you will leave the Pool with the actual accumulated total. \n
 	//	if (confirm('Do you want withdraw Now?')) {
-		let AMOUNT1 =((jQuery('#form-field-claim').val()*decimals)).toString(); 
+		let AMOUNT1 =jQuery('#form-field-claim').val().toString(); 
+		AMOUNT1 = web3.utils.toWei(AMOUNT1, 'ether');
 	let transfer = contractCoin.methods.claimToken(AMOUNT1).send({from: account })//, gas: '34373030303030'
 		.once('sending', function(payload){ console.log('Sending : '+payload);jQuery('.spinner').removeClass('hidden');})
 		.once('sent', function(payload){ console.log('Sent : '+payload);jQuery('#unStakeBtn ').fadeOut(200); })

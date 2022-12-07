@@ -273,14 +273,12 @@ const Layout = ({ children }) => {
             onClick={handleClickList}
             sx={{ textTransform: "none" }}
             selected={
-              location.pathname === "/compra" ||
               location.pathname === "/recibe" ||
-              location.pathname === "/swap" ||
               location.pathname === "/envia" ||
               location.pathname === "/retira"
             }
           >
-            <ListItemText primary="Compra AXN" />
+            <ListItemText primary="AXN" />
             {openList ? <ExpandLess /> : <ExpandMore />}
           </ListItemButton>
           <Collapse in={openList} timeout="auto" unmountOnExit>
@@ -288,28 +286,10 @@ const Layout = ({ children }) => {
               <ListItemButton
                 component={NavLink}
                 sx={{ textTransform: "none", pl: 4 }}
-                selected={location.pathname === "/compra"}
-                to="/compra"
-              >
-                <ListItemText primary="Compra" />
-              </ListItemButton>
-
-              <ListItemButton
-                component={NavLink}
-                sx={{ textTransform: "none", pl: 4 }}
                 selected={location.pathname === "/recibe"}
                 to="/recibe"
               >
-                <ListItemText primary="Recibe" />
-              </ListItemButton>
-
-              <ListItemButton
-                component={NavLink}
-                sx={{ textTransform: "none", pl: 4 }}
-                selected={location.pathname === "/swap"}
-                to="/swap"
-              >
-                <ListItemText primary="Swap" />
+                <ListItemText primary="Recibir" />
               </ListItemButton>
 
               <ListItemButton
@@ -318,7 +298,7 @@ const Layout = ({ children }) => {
                 selected={location.pathname === "/envia"}
                 to="/envia"
               >
-                <ListItemText primary="Envia" />
+                <ListItemText primary="Enviar" />
               </ListItemButton>
 
               <ListItemButton
@@ -327,7 +307,7 @@ const Layout = ({ children }) => {
                 selected={location.pathname === "/retira"}
                 to="/retira"
               >
-                <ListItemText primary="Retira" />
+                <ListItemText primary="Vender AXN" />
               </ListItemButton>
             </List>
           </Collapse>

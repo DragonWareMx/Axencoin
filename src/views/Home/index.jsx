@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import CardLeft from "./assets/BotonComprarAhora.png";
 import CardRight from "./assets/BotonLeermas.png";
 import Logo from "./assets/LogoPantalla1.png";
-import { Tooltip } from "@mui/material";
+import { Alert, Tooltip } from "@mui/material";
 
 export const Home = () => {
   return (
@@ -16,6 +16,16 @@ export const Home = () => {
         <img src={Logo} alt="Logo" className="home-logo" />
       </div>
       <Container fixed>
+        <Alert
+          sx={{ background: "rgb(0,0,0,0.5)", color: "white", mt: 2, mb: 3 }}
+          severity="info"
+        >
+          La primera Etapa del proyecto Axencoin concluyó por lo que te
+          comunicamos que ya no podrás realizar compra de nuevos token; sin
+          embargo, los que ya tienes seguirán generando recompensas hasta el día
+          7 de diciembre de 2023. Gracias por la confianza, pronto tendremos
+          noticias sobre la segunda etapa de este gran proyecto.
+        </Alert>
         <Grid container spacing={2} justifyContent="center" alignItems="center">
           <Grid
             item

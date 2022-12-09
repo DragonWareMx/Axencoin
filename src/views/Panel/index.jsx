@@ -4,12 +4,24 @@ import Grid from "@mui/material/Grid";
 import CardLeft from "./assets/BotonComprarAhora.png";
 import CardRight from "./assets/BotonLeermas.png";
 import { Container } from "@mui/system";
-import { Button } from "@mui/material";
+import { Alert, Button } from "@mui/material";
 
 export const Panel = () => {
   return (
     <>
       <Container fixed>
+        <Grid container spacing={{ xs: 2, md: 3 }} justifyContent="center">
+          <Alert
+            sx={{ background: "rgb(0,0,0,0.5)", color: "white", mt: 2 }}
+            severity="info"
+          >
+            La primera Etapa del proyecto Axencoin concluyó por lo que te
+            comunicamos que ya no podrás realizar compra de nuevos token; sin
+            embargo, los que ya tienes seguirán generando recompensas hasta el
+            día 7 de diciembre de 2023. Gracias por la confianza, pronto
+            tendremos noticias sobre la segunda etapa de este gran proyecto.
+          </Alert>
+        </Grid>
         <Grid container spacing={{ xs: 2, md: 3 }} justifyContent="center">
           <Grid item xs={10} md={4}>
             <div className="data-container">
